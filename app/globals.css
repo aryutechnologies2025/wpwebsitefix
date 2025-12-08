@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  --font-poppins: var(--font-poppins);
+
+  
+  --font-albert-sans: var(--font-albert-sans);
+  --font-visby: var(--font-visby);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+/* body {
+  background: var(--background);
+  color: var(--foreground);
+} */
+
+
+
+::-webkit-scrollbar{
+  width: 0;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+
+
+
+.dv-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.dv-text,
+.dv-ghost-layer {
+  display: inline-block;
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.6) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-position: var(--shineX, -100%) 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dv-ghost-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.dv-char,
+.dv-ghost-char {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
+.dv-word {
+  display: inline-block;
+  transform-style: preserve-3d;
+}
+
+
+
+::selection {
+  background: #FF6107; /* Highlight color */
+  color: white;
+}
+
+
+/* ./styles/globals.css */
+html, body {
+  touch-action: manipulation; /* disables pinch zoom on some devices */
+}
+
+
+
+
+.Toastify__progress-bar--success {
+  background: #FF8640 !important; /* custom color */
+}
+
+/* Change success icon color */
+.Toastify__toast--success .Toastify__toast-icon svg {
+  fill: #FF8640 !important;
+}
+
