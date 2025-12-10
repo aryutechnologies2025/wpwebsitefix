@@ -68,11 +68,10 @@ export const metadata = {
     title: "WP Fix Website",
     description:
       "WPWebsiteFix delivers end-to-end WordPress website maintenance.",
-    url: "https://wpwebsitefix.com",
     siteName: "WP Fix Website",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://wpwebsitefix.com/og-image.png",
         width: 1200,
         height: 630,
       },
@@ -84,7 +83,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "WP Fix Website",
     description: "WPWebsiteFix delivers end-to-end WordPress maintenance.",
-    images: ["/og-image.png"],
+    images: ["https://wpwebsitefix.com/og-image.png"],
   },
 };
 
