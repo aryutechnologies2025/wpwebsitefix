@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://wpwebsitefix.com/
+
+# Sitemaps
+Sitemap: https://wpwebsitefix.com/sitemap.xml

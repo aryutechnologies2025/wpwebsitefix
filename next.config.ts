@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   webpack: (config, { dev }) => {
-    // Prevent Hostinger from caching old chunks
     if (!dev) {
+      // Prevent Hostinger caching old JS bundles
       config.cache = false;
     }
     return config;

@@ -1,6 +1,5 @@
 'use client'
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
 
 const Home_Hero = dynamic(() => import("./components/home/Home_Hero"));
 const Home_About_Section = dynamic(
