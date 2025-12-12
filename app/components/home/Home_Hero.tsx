@@ -1,10 +1,8 @@
 "use client";
-import { BsArrowRightCircleFill } from "react-icons/bs";
 import { CiGlobe } from "react-icons/ci";
 import {
   CountUpOnScroll,
   Header,
-  HoverTextGoTopButton,
   MaskedTextReveal,
 } from "../../components";
 import { useEffect, useRef } from "react";
@@ -118,7 +116,7 @@ const Home_Hero = () => {
         </div>
 
         {/* Contact Button */}
-        <div className="mt-10 sm:mt-16 hidden md:block">
+        {/* <div className="mt-10 sm:mt-16 hidden md:block">
           <HoverTextGoTopButton
             topText="Contact Us"
             bottomText="Contact"
@@ -130,7 +128,7 @@ const Home_Hero = () => {
             iconClassName=""
             iconColor="bg-white"
           />
-        </div>
+        </div> */}
       </div>
     </section>
   );
