@@ -1,7 +1,8 @@
-import img1 from "../../assets/images/home-our-service-image1.png";
-import img2 from "../../assets/images/home-our-service-image2.png";
-import img3 from "../../assets/images/home-our-service-image3.png";
-import img4 from "../../assets/images/home-our-service-image4.png";
+import wordpressSecurityServiceIncludesImage1 from "../../assets/images/wordpressSecurityServiceIncludesImage1.png";
+import wordpressSecurityServiceIncludesImage2 from "../../assets/images/wordpressSecurityServiceIncludesImage2.png";
+import wordpressSecurityServiceIncludesImage3 from "../../assets/images/wordpressSecurityServiceIncludesImage3.png";
+import wordpressSecurityServiceIncludesImage4 from "../../assets/images/wordpressSecurityServiceIncludesImage4.jpg";
+
 
 export const includesData = {
   headlineLines: ["Why Choose WordPress"," Security Service?"],
@@ -10,22 +11,22 @@ export const includesData = {
     {
       title: "Advanced Protection",
       desc: "Block threats like malware, brute-force attacks, and unauthorized access.",
-      image: img1,
+      image: wordpressSecurityServiceIncludesImage2,
     },
     {
       title: "Real-Time Monitoring",
       desc: "Continuous scans and alerts for potential vulnerabilities",
-      image: img2,
+      image: wordpressSecurityServiceIncludesImage1,
     },
     {
       title: "Fast Recovery ",
       desc: "  Quick malware removal and backup restoration in case of emergencies.",
-      image: img3,
+      image: wordpressSecurityServiceIncludesImage3,
     },
     {
       title: "Secure Optimization",
       desc: " Harden your WordPress site with the latest security practices.",
-      image: img4,
+      image:wordpressSecurityServiceIncludesImage4,
     },
     
   ],

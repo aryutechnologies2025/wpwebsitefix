@@ -31,10 +31,10 @@ const DarkThemeCtaSection = dynamic(() =>
 
 
 export const metadata= {
-  title: " WordPress SEO Services",
+  title: " WordPress Speed Optimization Services",
   description:
-    "Boost traffic, improve visibility, and grow your business with our expert WordPress SEO services. Start today to rank higher and reach the right audience.",
-  keywords: 'WordPress SEO Services'
+    "Maximize your WordPress site’s performance with our expert WordPress Speed Optimization Service. Start today to boost load times, SEO, and user engagement.",
+  keywords: 'WordPress Speed Optimization Services'
 };
 const page = () => {
 

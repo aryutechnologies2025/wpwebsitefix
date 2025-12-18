@@ -30,10 +30,10 @@ const DarkThemeCtaSection = dynamic(() =>
 );
 
 export const metadata= {
-  title: "WordPress Landing Page Design & Development Services",
+  title: " WordPress Migration Services",
   description:
-    "Boost conversions, capture leads, and grow your business with our WordPress Landing Pages Design & Development services. Start today to engage visitors.",
-  keywords:'WordPress Landing Page Design & Development Services'
+    "Our WordPress Migration Services ensure smooth, secure transfers with zero downtime, no data loss, SEO-preserving support for CMS, domain, and WooCommerce.",
+  keywords:' WordPress Migration Services'
 };
 
 export default function Page() {

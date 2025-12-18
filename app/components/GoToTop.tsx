@@ -51,7 +51,7 @@ const GoToTop = () => {
           </div>
 
           {/* Go to Top Button */}
-          <div onClick={scrollToTop} className="relative group cursor-pointer">
+          {/* <div onClick={scrollToTop} className="relative group cursor-pointer">
             <div className="absolute right-12 top-1/2 -translate-y-1/2 bg-white text-black text-sm px-2 py-1 rounded-md shadow-md opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 whitespace-nowrap">
               Go to Top
               <span className="absolute left-full top-1/2 -translate-y-1/2 border-4 border-transparent border-l-white"></span>
@@ -59,7 +59,7 @@ const GoToTop = () => {
             <div className="h-7 w-7 flex items-center justify-center bg-[#FF6E1B] text-white rounded-full shadow-md transition-transform duration-300 hover:scale-110">
               <FaChevronUp className="text-xs " />
             </div>
-          </div>
+          </div> */}
         </div>
       )}
     </>

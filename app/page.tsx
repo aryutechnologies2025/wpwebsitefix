@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import dynamic from "next/dynamic";
 
 const Home_Hero = dynamic(() => import("./components/home/Home_Hero"));
@@ -23,25 +23,16 @@ const Home_Testimonial = dynamic(
 const Home_CTA = dynamic(() => import("./components/home/Home_CTA"));
 
 export default function Home() {
-
-
-
-
-
   return (
-    
     <main>
-
-
       <Home_Hero />
-      <Home_About_Section />
+      {/* <Home_About_Section /> */}
       <Home_Portfolio_Section />
       <Home_Our_Services />
       <HomeToolsAndTechnologies />
       <HomeMaintenanceProcessWork />
       <Home_Testimonial />
       <Home_CTA />
-  
     </main>
   );
 }

@@ -8,12 +8,11 @@ import serviceImage2 from "../../assets/images/serviceHeroImage2.jpg";
 import serviceImage3 from "../../assets/images/serviceHeroImage3.jpg";
 import serviceImage4 from "../../assets/images/serviceHeroImage4.jpg";
 import { HoverTextGoTopButton } from "../../components";
+import { usePathname } from "next/navigation";
 
 interface HeaderProps {
   shadow?: boolean;
 }
-
-
 
 // === Development Services ===
 const devServices = [
@@ -76,6 +75,22 @@ export const Header = ({ shadow = true }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState("development");
 
+  const pathname = usePathname();
+  const linkClass = (href: string) =>
+    `transition-all duration-500 ${
+      pathname === href
+        ? "text-[#FF6107]"
+        : "text-[#1E1E1E] hover:text-[#FF6107]/70"
+    }`;
+
+const mobileLinkClass = (href: string) =>
+  `text-3xl font-bold transition-all duration-300 pl-4 border-l-4 ${
+    pathname === href ||  pathname.startsWith("/wordpress-")
+      ? "text-[#FF6107] border-[#FF6107]"
+      : "text-gray-800 border-transparent hover:text-[#FF6107]"
+  }`;
+
+
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.classList.add("overflow-hidden");
@@ -112,7 +127,9 @@ export const Header = ({ shadow = true }: HeaderProps) => {
           <div className="hidden md:flex gap-12 font-semibold font-visby ">
             <Link
               href="/"
-              className="text-[#1E1E1E] hover:text-gray-600 transition-all duration-500"
+              // className="text-[#1E1E1E] hover:text-[#FF6107] transition-all duration-500"
+
+              className={linkClass("/")}
             >
               Home
             </Link>
@@ -122,7 +139,14 @@ export const Header = ({ shadow = true }: HeaderProps) => {
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
-              <p className="text-[#1E1E1E] cursor-pointer hover:text-gray-600 transition-all duration-500">
+              
+              <p
+                className={`cursor-pointer transition-all duration-500 ${
+                  pathname.startsWith("/services")
+                    ? "text-[#FF6107] hover:text-[#FF6107]/70"
+                    : "text-[#1E1E1E] hover:text-[#FF6107]/70"
+                }`}
+              >
                 Services
               </p>
 
@@ -186,9 +210,13 @@ export const Header = ({ shadow = true }: HeaderProps) => {
                       : maintenanceServices
                     ).map((service, index) => (
                       <Link
-                        key={index}
+                      key={index}
                         href={service.href}
-                        className="block py-1 text-lg hover:text-[#FF6E1B] transition"
+                        className={`block py-1 text-lg transition ${
+                          pathname === service.href
+                            ? "text-[#FF6107] font-semibold"
+                            : "hover:text-[#FF6E1B]/70"
+                        }`}
                       >
                         {service.title}
                       </Link>
@@ -226,13 +254,15 @@ export const Header = ({ shadow = true }: HeaderProps) => {
 
             <Link
               href="/about-us"
-              className="text-[#1E1E1E] hover:text-gray-600 transition-all duration-500"
+              // className="text-[#1E1E1E] hover:text-[#FF6107] transition-all duration-500"
+              className={linkClass("/about-us")}
             >
               About Us
             </Link>
             <Link
               href="/contact-us"
-              className="text-[#1E1E1E] hover:text-gray-600 transition-all duration-500"
+              // className="text-[#1E1E1E] hover:text-[#FF6107] transition-all duration-500"
+              className={linkClass("/contact-us")}
             >
               Contact Us
             </Link>
@@ -314,36 +344,23 @@ export const Header = ({ shadow = true }: HeaderProps) => {
         </div>
 
         <nav className="flex flex-col mx-12 mt-16 space-y-6 font-visby">
-          <Link href="/" className="text-3xl font-bold text-gray-800">
+          <Link href="/" className={mobileLinkClass("/")}>
             Home
           </Link>
 
-          <Link href="/services" className="text-3xl font-bold text-gray-800">
+          <Link href="/wordpress-maintenance-and-development-services" className={mobileLinkClass("/wordpress-maintenance-and-development-services")}>
             Services
           </Link>
-          <Link href="/about-us" className="text-3xl font-bold text-gray-800">
+          <Link href="/about-us" className={mobileLinkClass("/about-us")}>
             About Us
           </Link>
-          <Link href="/contact-us" className="text-3xl font-bold text-gray-800">
+          <Link href="/contact-us" className={mobileLinkClass("/contact-us")}>
             Contact Us
           </Link>
         </nav>
       </div>
 
-      {/* <StaggerMenu
-          position="right"
-          items={menuItems}
-          socialItems={socialItems}
-          displaySocials={true}
-          displayItemNumbering={true}
-          menuButtonColor="#fff"
-          openMenuButtonColor="#fff"
-          changeMenuColorOnOpen={true}
-          colors={["#FF6107", "1d1d1d"]}
-
-          logoUrl="favicon.svg"
-          accentColor="#ff6b6b"
-        /> */}
+      
     </header>
   );
 };

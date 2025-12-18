@@ -1,10 +1,12 @@
 
-import seoServiceImage1 from "../../assets/images/seoServiceImage1.jpg";
-import seoServiceImage2 from "../../assets/images/seoServiceImage2.webp";
-import seoServiceImage3 from "../../assets/images/seoServiceImage3.jpg";
-import seoServiceImage4 from "../../assets/images/seoServiceImage4.png";
-import seoServiceImage10 from "../../assets/images/seoServiceImage10.jpg";
-import seoServiceImage6 from "../../assets/images/seoServiceImage6.webp";
+import seoServiceHeroImage1 from "../../assets/images/seoServiceHeroImage1.jpg";
+import seoServiceHeroImage2 from "../../assets/images/seoServiceHeroImage2.webp";
+import seoServiceHeroImage3 from "../../assets/images/seoServiceHeroImage3.jpg";
+import seoServiceHeroImage4 from "../../assets/images/seoServiceHeroImage4.png";
+import seoServiceHeroImage5 from "../../assets/images/seoServiceHeroImage5.webp";
+import seoServiceHeroImage6 from "../../assets/images/seoServiceHeroImage6.jpg";
+import seoServiceHeroImage7 from "../../assets/images/seoServiceHeroImage7.jpg";
+
 
 export const heroData = {
   headlineLines: ["WordPress SEO Services"],
@@ -12,27 +14,31 @@ export const heroData = {
     "Search Engine Optimization (SEO) is crucial for any WordPress website aiming to attract more visitors, generate leads, and increase revenue. Our WordPress SEO services cover every aspect of optimization, from technical setup and plugin configuration to content strategies, ensuring your website ranks higher on search engines and delivers measurable results. With expert SEO practices, your site will not only drive more traffic but also offer a seamless user experience that keeps visitors engaged and encourages conversions.",
   images: [
     {
-      src: seoServiceImage1,
+      src: seoServiceHeroImage1,
       alt: "This image shows WPWebsiteFix WordPress SEO services focused on higher rankings, traffic growth, and visibility.",
     },
     {
-      src: seoServiceImage2,
+      src: seoServiceHeroImage2,
       alt: "This image shows WPWebsiteFix WordPress SEO services focused on higher rankings, traffic growth, and visibility.",
     },
     {
-      src: seoServiceImage3,
+      src: seoServiceHeroImage3,
       alt: "This image shows WPWebsiteFix WordPress SEO services focused on higher rankings, traffic growth, and visibility.",
     },
     {
-      src: seoServiceImage4,
+      src: seoServiceHeroImage4,
       alt: "This image shows WPWebsiteFix WordPress SEO services focused on higher rankings, traffic growth, and visibility.",
     },
     {
-      src: seoServiceImage10,
+      src: seoServiceHeroImage5,
       alt: "This image shows WPWebsiteFix WordPress SEO services focused on higher rankings, traffic growth, and visibility.",
     },
     {
-      src: seoServiceImage6,
+      src: seoServiceHeroImage6,
+      alt: "This image shows WPWebsiteFix WordPress SEO services focused on higher rankings, traffic growth, and visibility.",
+    },
+    {
+      src: seoServiceHeroImage7,
       alt: "This image shows WPWebsiteFix WordPress SEO services focused on higher rankings, traffic growth, and visibility.",
     },
   ],

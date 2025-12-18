@@ -1,7 +1,8 @@
-import img1 from "../../assets/images/home-our-service-image1.png";
-import img2 from "../../assets/images/home-our-service-image2.png";
-import img3 from "../../assets/images/home-our-service-image3.png";
-import img4 from "../../assets/images/home-our-service-image4.png";
+import wordpressUpdateServicesIncludesImage1 from "../../assets/images/wordpressUpdateServicesIncludesImage1.png";
+import wordpressUpdateServicesIncludesImage2 from "../../assets/images/wordpressUpdateServicesIncludesImage2.png";
+import wordpressUpdateServicesIncludesImage3 from "../../assets/images/wordpressUpdateServicesIncludesImage3.png";
+import wordpressUpdateServicesIncludesImage4 from "../../assets/images/wordpressUpdateServicesIncludesImage4.png";
+
 
 export const includesData = {
   headlineLines: ["Why WordPress Update Services"],
@@ -10,22 +11,22 @@ export const includesData = {
     {
       title: "Smooth Operation ",
       desc: " bug fixes, resolved conflicts, and maximum uptime.",
-      image: img1,
+      image: wordpressUpdateServicesIncludesImage1,
     },
     {
       title: "Security & Protection ",
       desc: " regular updates and backups safeguard your content and database.",
-      image: img2,
+      image: wordpressUpdateServicesIncludesImage2,
     },
     {
       title: "Enhanced Features ",
       desc: "access the latest WordPress tools, features, and improvements.",
-      image: img3,
+      image:wordpressUpdateServicesIncludesImage3,
     },
     {
       title: "Better Engagement",
       desc: "fresh content, optimized visuals, and improved design boost visitor interaction.",
-      image: img4,
+      image: wordpressUpdateServicesIncludesImage4,
     },
     
   ],

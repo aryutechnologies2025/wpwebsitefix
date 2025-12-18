@@ -30,10 +30,10 @@ const DarkThemeCtaSection = dynamic(() =>
 );
 
 export const metadata= {
-  title: "WordPress Landing Page Design & Development Services",
+  title: "WordPress Multilingual Headless CMS Development",
   description:
-    "Boost conversions, capture leads, and grow your business with our WordPress Landing Pages Design & Development services. Start today to engage visitors.",
-  keywords:'WordPress Landing Page Design & Development Services'
+    "Build fast, scalable, multilingual websites with our WordPress Multilingual Headless CMS Development services. Start today to expand your global reach.",
+  keywords:'WordPress Multilingual Headless CMS Development'
 };
 
 export default function Page() {

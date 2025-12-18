@@ -27,7 +27,7 @@ const Home_Portfolio_Section = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 90%",
+        start: "top 110%",
         end: "+=1000",
         scrub: 3,
       },
@@ -66,21 +66,13 @@ const Home_Portfolio_Section = () => {
 
   return (
     <section className="relative overflow-hidden ">
-      {/* Earth BG */}
-      <div className="absolute -z-10 -left-20 top-20 w-[250px] h-[250px] md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] pointer-events-none">
-        <Image
-          src={bw_earth_sphere}
-          alt="WPWebsiteFix delivers the best WordPress website maintenance services with reliable, expert support."
-          fill
-          className="object-cover object-top"
-        />
-      </div>
+     
 
       {/* Heading Top */}
       <SectionsTopSmallHeading
         displayText="Works"
         dotBg="#FF6107"
-        className="mx-auto mt-32 md:mt-40 lg:mt-52"
+        className="mx-auto mt-20"
       />
 
       <div

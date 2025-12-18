@@ -1,7 +1,7 @@
-import img1 from "../../assets/images/home-our-service-image1.png";
-import img2 from "../../assets/images/home-our-service-image2.png";
-import img3 from "../../assets/images/home-our-service-image3.png";
-import img4 from "../../assets/images/home-our-service-image4.png";
+import wordpressBugFixingServiceIncludesImage1 from '../../assets/images/wordpressBugFixingServiceIncludesImage1.png'
+import wordpressBugFixingServiceIncludesImage2 from '../../assets/images/wordpressBugFixingServiceIncludesImage2.png'
+import serviceIncludesImage1 from '../../assets/images/serviceIncludesImage1.jpg'
+import serviceIncludesImage2 from '../../assets/images/serviceIncludesImage2.jpg'
 
 export const includesData = {
   headlineLines: ["Why Choose WordPress", " Bug Fixing Service?"],
@@ -10,22 +10,22 @@ export const includesData = {
     {
       title: "Seamless Functionality",
       desc: "identify and fix errors quickly without downtime",
-      image: img1,
+      image: wordpressBugFixingServiceIncludesImage1,
     },
     {
       title: "Improved Stability",
       desc: "address recurring issues to keep your site running smoothly.",
-      image: img2,
+      image: wordpressBugFixingServiceIncludesImage2,
     },
     {
       title: "Enhanced User Experience",
       desc: "eliminate frustrations for visitors.",
-      image: img3,
+      image: serviceIncludesImage1,
     },
     {
       title: "Secure Operations ",
       desc: " resolve vulnerabilities to protect your site and data.",
-      image: img4,
+      image: serviceIncludesImage2,
     },
   ],
   altText:

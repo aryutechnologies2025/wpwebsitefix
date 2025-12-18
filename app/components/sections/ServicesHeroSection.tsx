@@ -86,7 +86,7 @@ interface ServicesHeroSectionProps {
               alt={img.alt}
               width={400}
               height={60}
-              className="rounded-xl object-cover w-[250px] sm:w-[300px] md:w-[400px]"
+              className="rounded-xl object-cover w-[250px] sm:w-[300px] md:w-[400px] h-[266px]"
             />
           ))}
         </div>

@@ -91,9 +91,7 @@ const ServicePageHero = () => {
   const router = useRouter();
   return (
     <section className="">
-      {/* <div className="w-full md:w-[90vw] mx-auto mt-5"> */}
-        <Header />
-      {/* </div> */}
+      <Header />
 
       <div className=" font-poppins ">
         <div className="mx-auto px-6 md:px-12 lg:px-20 pt-6 md:pt-12 lg:pt-20 text-center  flex sm:block flex-wrap ">
@@ -143,7 +141,7 @@ const ServicePageHero = () => {
                 <div
                   onClick={() => router.push(item.href)}
                   key={index}
-                  className="border cursor-pointer border-[#FFFFFF]/50 rounded-3xl sm:rounded-4xl p-5 hover:bg-white/10  transition-all duration-500"
+                  className="border cursor-pointer border-[#FFFFFF]/50 rounded-3xl sm:rounded-4xl p-5 hover:bg-white/5 hover:scale-95  transition-all duration-500 "
                 >
                   <p className="text-xl sm:text-2xl font-semibold">
                     {item.title}
@@ -196,7 +194,7 @@ const ServicePageHero = () => {
                 <div
                   onClick={() => router.push(item.href)}
                   key={index}
-                  className="border border-[#FFFFFF]/50 rounded-3xl sm:rounded-4xl p-5 hover:bg-white/10 transition"
+                  className="border border-[#FFFFFF]/50 hover:scale-97 cursor-pointer rounded-3xl sm:rounded-4xl p-5 hover:bg-white/5  transition-all duration-500"
                 >
                   {/* <p className="text-xl sm:text-2xl font-semibold">
                     {item.title}

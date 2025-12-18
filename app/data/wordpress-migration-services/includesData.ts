@@ -1,7 +1,7 @@
-import img1 from "../../assets/images/home-our-service-image1.png";
-import img2 from "../../assets/images/home-our-service-image2.png";
-import img3 from "../../assets/images/home-our-service-image3.png";
-import img4 from "../../assets/images/home-our-service-image4.png";
+import wordpressMigrationServiceIncludesImage1 from '../../assets/images/wordpressMigrationServiceIncludesImage1.png'
+import wordpressMigrationServiceIncludesImage2 from '../../assets/images/wordpressMigrationServiceIncludesImage2.png'
+import seoServiceIncludesImage3 from '../../assets/images/seoServiceIncludesImage3.jpg'
+import serviceHeroImage17 from '../../assets/images/serviceHeroImage17.jpg'
 
 export const includesData = {
   headlineLines: ["Why Choose WordPress" ,"Migration Services?"],
@@ -10,22 +10,22 @@ export const includesData = {
     {
       title: "Smooth and Secure Migration",
       desc: "zero downtime transitions with all data, media, and functionality intact.",
-      image: img1,
+      image: wordpressMigrationServiceIncludesImage1,
     },
     {
       title: "Comprehensive Coverage",
       desc: "  from CMS migration to complex multisite and WooCommerce transfers.",
-      image: img2,
+      image: serviceHeroImage17 ,
     },
     {
       title: "SEO Preservation",
       desc: "maintain your search rankings and traffic throughout the move.",
-      image: img3,
+      image: seoServiceIncludesImage3,
     },
     {
       title: "Expert Support",
       desc: "skilled developers handle every technical detail for a seamless experience.",
-      image: img4,
+      image: wordpressMigrationServiceIncludesImage2,
     },
     
   ],

@@ -30,10 +30,10 @@ const DarkThemeCtaSection = dynamic(() =>
 );
 
 export const metadata= {
-  title: "WordPress Landing Page Design & Development Services",
+  title: " WordPress Bug Fixing Services",
   description:
-    "Boost conversions, capture leads, and grow your business with our WordPress Landing Pages Design & Development services. Start today to engage visitors.",
-  keywords:'WordPress Landing Page Design & Development Services'
+    "Resolve WordPress errors, crashes, and issues with our expert WordPress Bug Fixing Services. Start today to keep your site secure, stable, and smooth.",
+  keywords:'WordPress Bug Fixing Services'
 };
 
 export default function Page() {
