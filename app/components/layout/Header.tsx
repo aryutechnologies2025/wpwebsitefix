@@ -124,7 +124,7 @@ const mobileLinkClass = (href: string) =>
           {/* </div> */}
 
           {/* === Desktop Nav === */}
-          <div className="hidden md:flex gap-12 font-semibold font-visby ">
+          <div className="max-md:hidden flex gap-12 font-semibold font-visby ">
             <Link
               href="/"
               // className="text-[#1E1E1E] hover:text-[#FF6107] transition-all duration-500"
