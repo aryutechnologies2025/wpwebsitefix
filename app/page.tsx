@@ -2,9 +2,6 @@
 import dynamic from "next/dynamic";
 
 const Home_Hero = dynamic(() => import("./components/home/Home_Hero"));
-const Home_About_Section = dynamic(
-  () => import("./components/home/Home_About_Section")
-);
 const Home_Portfolio_Section = dynamic(
   () => import("./components/home/Home_Portfolio_Section")
 );

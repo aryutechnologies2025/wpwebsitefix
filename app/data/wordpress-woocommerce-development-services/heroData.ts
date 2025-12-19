@@ -1,8 +1,3 @@
-import serviceHeroImage1 from "../../assets/images/serviceHeroImage1.jpg";
-import serviceHeroImage2 from "../../assets/images/serviceHeroImage2.jpg";
-import serviceHeroImage3 from "../../assets/images/serviceHeroImage3.jpg";
-import serviceHeroImage4 from "../../assets/images/serviceHeroImage4.jpg";
-
 import wordpressWooCommerceHeroImage1 from "../../assets/images/wordpressWooCommerceHeroImage1.png";
 import wordpressWooCommerceHeroImage2 from "../../assets/images/wordpressWooCommerceHeroImage2.png";
 import wordpressWooCommerceHeroImage3 from "../../assets/images/wordpressWooCommerceHeroImage3.png";

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { FaChevronUp } from "react-icons/fa";
+// import { FaChevronUp } from "react-icons/fa";
 import whatsapp from "../assets/images/whatsapp.svg";
 import Image from "next/image";
 
@@ -18,10 +18,10 @@ const GoToTop = () => {
   }, []);
 
   // Scroll to top function
-  const scrollToTop = () => {
-    console.log("ssssssssssss");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  // const scrollToTop = () => {
+  //   console.log("ssssssssssss");
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // };
 
   return (
     <>

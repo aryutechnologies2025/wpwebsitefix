@@ -1,5 +1,5 @@
 "use client";
-import { BsArrowRight, BsArrowRightCircleFill } from "react-icons/bs";
+import {  BsArrowRightCircleFill } from "react-icons/bs";
 import { CiGlobe } from "react-icons/ci";
 import {
   CountUpOnScroll,

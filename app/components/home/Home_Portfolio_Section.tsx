@@ -8,8 +8,7 @@ import {
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BsArrowUpRight } from "react-icons/bs";
-import Image from "next/image";
-import bw_earth_sphere from "../../assets/images/b&w-earth-sphere.svg";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
