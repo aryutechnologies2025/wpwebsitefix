@@ -7,6 +7,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import DisableZoom from "./components/DisableZoom";
 import GoToTop from "./components/GoToTop";
 import Script from "next/script";
+import { Metadata } from "next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -56,24 +57,75 @@ const visby = localFont({
   variable: "--font-visby",
 });
 
-export const metadata = {
-  title: "WP Fix ",
+// export const metadata = {
+//   title: "WP Fix ",
+//   description:
+//     "WPWebsiteFix delivers end-to-end WordPress website maintenance with strong security, fast loading speeds, regular updates, and custom solutions for your site.",
+//   keywords: "wordpress website maintenance services",
+//   icons: {
+//     icon: "/favicon.png",
+//   },
+//   openGraph: {
+//     title: "WP Fix Website",
+//     description:
+//       "WPWebsiteFix delivers end-to-end WordPress website maintenance.",
+//     siteName: "WP Fix Website",
+//     images: [
+//       {
+//         url: "https://wpwebsitefix.com/og-image.png",
+//         width: 1200,
+//         height: 630,
+//       },
+//     ],
+//     type: "website",
+//   },
+
+//   twitter: {
+//     card: "summary_large_image",
+//     title: "WP Fix Website",
+//     description: "WPWebsiteFix delivers end-to-end WordPress maintenance.",
+//     images: ["https://wpwebsitefix.com/og-image.png"],
+//   },
+// };
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://wpwebsitefix.com"),
+
+  title: "WP Website Fix ",
   description:
-    "WPWebsiteFix delivers end-to-end WordPress website maintenance with strong security, fast loading speeds, regular updates, and custom solutions for your site.",
-  keywords: "wordpress website maintenance services",
+    "WP Website Fix delivers end-to-end WordPress website maintenance with strong security, fast loading speeds, regular updates, and custom solutions.",
+
+
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png" }],
+    other: [
+      {
+        rel: "android-chrome",
+        url: "/web-app-manifest-192x192.png",
+      },
+      {
+        rel: "android-chrome",
+        url: "/web-app-manifest-512x512.png",
+      },
+    ],
   },
+
   openGraph: {
-    title: "WP Fix Website",
+    title: "WP Website Fix",
     description:
       "WPWebsiteFix delivers end-to-end WordPress website maintenance.",
-    siteName: "WP Fix Website",
+    url: "https://wpwebsitefix.com",
+    siteName: "WP Website Fix",
     images: [
       {
-        url: "https://wpwebsitefix.com/og-image.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
+        alt: "WP Website Fix",
       },
     ],
     type: "website",
@@ -81,9 +133,10 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "WP Fix Website",
-    description: "WPWebsiteFix delivers end-to-end WordPress maintenance.",
-    images: ["https://wpwebsitefix.com/og-image.png"],
+    title: "WP Website Fix",
+    description:
+      "WPWebsiteFix delivers end-to-end WordPress website maintenance.",
+    images: ["/og-image.png"],
   },
 };
 

@@ -1,5 +1,5 @@
 "use client";
-import {  BsArrowRightCircleFill } from "react-icons/bs";
+import { BsArrowRightCircleFill } from "react-icons/bs";
 import { CiGlobe } from "react-icons/ci";
 import {
   CountUpOnScroll,
@@ -36,25 +36,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Home_Hero = () => {
   const router = useRouter();
-  const bgRef = useRef<HTMLDivElement>(null);
-
-  // Animate gradient background efficiently
-  useEffect(() => {
-    if (!bgRef.current) return;
-
-    gsap.to(bgRef.current, {
-      keyframes: [
-        { backgroundPosition: "0% 0%" },
-        { backgroundPosition: "50% 50%" },
-        { backgroundPosition: "100% 0%" },
-        { backgroundPosition: "50% 50%" },
-        { backgroundPosition: "0% 0%" },
-      ],
-      duration: 10,
-      ease: "linear",
-      repeat: -1,
-    });
-  }, []);
 
   return (
     <section className="relative  overflow-hidden">
@@ -212,7 +193,6 @@ const Home_Hero = () => {
               </div>
             </div>
           </a>
-
 
           {/* ================= CARD 2 ================= */}
           <a
