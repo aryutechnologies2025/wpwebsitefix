@@ -10,7 +10,6 @@ const AboutMeetOurTeam = dynamic(
 );
 const CtaSection = dynamic(() => import("../components/sections/CtaSection"));
 
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://wpwebsitefix.com"),
 
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
     "WordPress theme development",
     "WooCommerce development",
     "WordPress SEO services",
-    "Headless WordPress development"
+    "Headless WordPress development",
   ],
 
   alternates: {
@@ -46,7 +45,14 @@ export const metadata: Metadata = {
     title: "About WPWebsiteFix – WordPress Maintenance & Development Company",
     description:
       "WPWebsiteFix provides 12+ professional WordPress services including maintenance, security, speed optimization, development, WooCommerce, SEO, and custom solutions.",
-    url: "https://wpwebsitefix.com/about-us/",
+    images: [
+      {
+        url: "https://wpwebsitefix.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "About WPWebsiteFix – WordPress Support",
+      },
+    ],
     siteName: "WPWebsiteFix",
     type: "website",
   },
@@ -56,9 +62,10 @@ export const metadata: Metadata = {
     title: "About WPWebsiteFix – WordPress Experts",
     description:
       "Discover WPWebsiteFix, a trusted WordPress agency offering maintenance, development, security, speed optimization, and custom WordPress solutions.",
+          images: ["https://wpwebsitefix.com/og-image.png"],
+
   },
 };
-
 
 export default function Page() {
   return (

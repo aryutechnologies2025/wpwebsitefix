@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     title: "Terms & Conditions | WPWebsiteFix",
     description:
       "Review the Terms & Conditions governing the use of WPWebsiteFix’s website and WordPress services.",
-    url: "https://wpwebsitefix.com/terms-and-conditions/",
+            url: "https://wpwebsitefix.com/og-image.png",
+
     siteName: "WPWebsiteFix",
     type: "article",
   },
@@ -32,6 +33,8 @@ export const metadata: Metadata = {
     title: "Terms & Conditions | WPWebsiteFix",
     description:
       "Review the Terms & Conditions for using WPWebsiteFix’s website and WordPress services.",
+          images: ["https://wpwebsitefix.com/og-image.png"],
+
   },
 };
 

@@ -35,7 +35,8 @@ export const metadata: Metadata = {
     title: "WordPress Maintenance & Development Services | WPWebsiteFix",
     description:
       "WPWebsiteFix provides complete WordPress maintenance and development services including security, performance optimization, bug fixes, migrations, and custom solutions.",
-    url: "https://wpwebsitefix.com/wordpress-maintenance-and-development-services/",
+            url: "https://wpwebsitefix.com/og-image.png",
+
     siteName: "WPWebsiteFix",
     type: "website",
   },
@@ -45,6 +46,8 @@ export const metadata: Metadata = {
     title: "WordPress Maintenance & Development Services | WPWebsiteFix",
     description:
       "Discover all WordPress services from WPWebsiteFix, including maintenance, security, speed optimization, development, and expert support.",
+          images: ["https://wpwebsitefix.com/og-image.png"],
+
   },
 };
 
