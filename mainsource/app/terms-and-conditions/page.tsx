@@ -1,6 +1,41 @@
 import React from "react";
 import { Header } from "../components";
 
+
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions | WPWebsiteFix",
+  description:
+    "Read the Terms & Conditions of WPWebsiteFix to understand the rules, responsibilities, and policies governing the use of our website and WordPress services.",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical: "https://wpwebsitefix.com/terms-and-conditions/",
+  },
+
+  openGraph: {
+    title: "Terms & Conditions | WPWebsiteFix",
+    description:
+      "Review the Terms & Conditions governing the use of WPWebsiteFix’s website and WordPress services.",
+    url: "https://wpwebsitefix.com/terms-and-conditions/",
+    siteName: "WPWebsiteFix",
+    type: "article",
+  },
+
+  twitter: {
+    card: "summary",
+    title: "Terms & Conditions | WPWebsiteFix",
+    description:
+      "Review the Terms & Conditions for using WPWebsiteFix’s website and WordPress services.",
+  },
+};
+
+
 const page = () => {
   return (
     <div>

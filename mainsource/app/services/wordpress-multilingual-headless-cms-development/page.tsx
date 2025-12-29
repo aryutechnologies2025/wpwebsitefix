@@ -29,12 +29,63 @@ const DarkThemeCtaSection = dynamic(() =>
   import("@/app/components/sections/DarkThemeCtaSection")
 );
 
-export const metadata= {
-  title: "WordPress Multilingual Headless CMS Development",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "WordPress Multilingual Headless CMS Development | WPWebsiteFix",
+
   description:
-    "Build fast, scalable, multilingual websites with our WordPress Multilingual Headless CMS Development services. Start today to expand your global reach.",
-  keywords:'WordPress Multilingual Headless CMS Development'
+    "Build fast, scalable, and multilingual websites with our WordPress headless CMS development services. API-driven, SEO-friendly, and globally optimized solutions.",
+
+  alternates: {
+    canonical:
+      "https://wpwebsitefix.com/services/wordpress-multilingual-headless-cms-development/",
+  },
+
+  keywords: [
+    "WordPress headless CMS development",
+    "multilingual WordPress development",
+    "headless WordPress services",
+    "API driven WordPress websites",
+    "scalable WordPress CMS",
+  ],
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title:
+      "WordPress Multilingual Headless CMS Development",
+    description:
+      "Scalable and multilingual headless WordPress CMS solutions for fast, global websites.",
+    url:
+      "https://wpwebsitefix.com/services/wordpress-multilingual-headless-cms-development/",
+    siteName: "WPWebsiteFix",
+    images: [
+      {
+        url: "https://wpwebsitefix.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt:
+          "WordPress Multilingual Headless CMS Development",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "WordPress Multilingual Headless CMS Development",
+    description:
+      "High-performance, multilingual headless WordPress CMS solutions.",
+    images: ["https://wpwebsitefix.com/og-image.png"],
+  },
 };
+
 
 export default function Page() {
   const {

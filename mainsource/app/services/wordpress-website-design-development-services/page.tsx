@@ -29,11 +29,56 @@ const DarkThemeCtaSection = dynamic(
   () => import("@/app/components/sections/DarkThemeCtaSection")
 );
 
-export const metadata = {
-  title: "WordPress Website Design & Development Services",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "WordPress Website Design & Development Services | WPWebsiteFix",
+
   description:
-    "Build a professional, high-performing website with our expert WordPress Website Design & Development Services. Start today to enhance your online presence.",
-  keywords: "WordPress Website Design & Development Services",
+    "Get a professional, fast, and scalable website with our WordPress website design & development services. Custom-built, SEO-friendly, and conversion-focused by WPWebsiteFix.",
+
+  alternates: {
+    canonical:
+      "https://wpwebsitefix.com/services/wordpress-website-design-development-services/",
+  },
+
+  keywords: [
+    "WordPress website design",
+    "WordPress website development",
+    "custom WordPress development",
+    "WordPress web design services",
+    "business WordPress websites",
+  ],
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "WordPress Website Design & Development Services",
+    description:
+      "Custom WordPress website design & development services to build fast, secure, and scalable websites.",
+    url: "https://wpwebsitefix.com/services/wordpress-website-design-development-services/",
+    siteName: "WPWebsiteFix",
+    images: [
+      {
+        url: "https://wpwebsitefix.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "WordPress Website Design & Development Services",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "WordPress Website Design & Development Services",
+    description:
+      "Build a high-performing WordPress website with expert design & development services.",
+    images: ["https://wpwebsitefix.com/og-image.png"],
+  },
 };
 
 const page = () => {

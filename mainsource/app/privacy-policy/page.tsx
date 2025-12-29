@@ -1,6 +1,39 @@
 import React from "react";
 import { Header } from "../components";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | WPWebsiteFix",
+  description:
+    "Read WPWebsiteFix’s Privacy Policy to understand how we collect, use, protect, and manage your personal information when you use our WordPress services and website.",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical: "https://wpwebsitefix.com/privacy-policy/",
+  },
+
+  openGraph: {
+    title: "Privacy Policy | WPWebsiteFix",
+    description:
+      "Learn how WPWebsiteFix collects, uses, and protects your personal information.",
+    url: "https://wpwebsitefix.com/privacy-policy/",
+    siteName: "WPWebsiteFix",
+    type: "article",
+  },
+
+  twitter: {
+    card: "summary",
+    title: "Privacy Policy | WPWebsiteFix",
+    description:
+      "Learn how WPWebsiteFix collects, uses, and protects your personal information.",
+  },
+};
+
 const page = () => {
   return (
     <div>

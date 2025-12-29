@@ -22,9 +22,24 @@ const Home_CTA = dynamic(() => import("./components/home/Home_CTA"));
 export const metadata: Metadata = {
   metadataBase: new URL("https://wpwebsitefix.com"),
 
-  title: "WP Website Fix",
+  title: "WP Website Fix – WordPress Maintenance & Development Experts",
   description:
-    "WP Website Fix delivers end-to-end WordPress website maintenance with strong security, fast loading speeds, regular updates, and custom solutions.",
+    "WP Website Fix is a professional WordPress agency offering maintenance, security, speed optimization, bug fixing, migrations, custom development, WooCommerce solutions, and ongoing website support.",
+
+keywords: [
+    "About WPWebsiteFix",
+    "WordPress maintenance company",
+    "WordPress development services",
+    "WordPress bug fixing",
+    "WordPress migration services",
+    "WordPress security services",
+    "WordPress speed optimization",
+    "WordPress plugin development",
+    "WordPress theme development",
+    "WooCommerce development",
+    "WordPress SEO services",
+    "Headless WordPress development"
+  ],
 
   alternates: {
     canonical: "https://wpwebsitefix.com",
@@ -36,9 +51,9 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "WP Website Fix",
+    title: "WP Website Fix – WordPress Maintenance & Development Experts",
     description:
-      "WP Website Fix delivers end-to-end WordPress website maintenance with strong security, fast loading speeds, regular updates, and custom solutions.",
+      "WP Website Fix provides complete WordPress maintenance and development services including security, speed optimization, bug fixing, migrations, and custom solutions.",
     url: "https://wpwebsitefix.com",
     siteName: "WP Website Fix",
     images: [
@@ -46,7 +61,7 @@ export const metadata: Metadata = {
         url: "https://wpwebsitefix.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "WP Website Fix",
+        alt: "WP Website Fix – WordPress Experts",
       },
     ],
     type: "website",
@@ -54,12 +69,14 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "WP Website Fix",
+    title: "WP Website Fix – WordPress Maintenance & Development Experts",
     description:
-      "WP Website Fix delivers end-to-end WordPress website maintenance.",
+      "Professional WordPress maintenance and development services including security, speed optimization, bug fixing, and custom solutions.",
     images: ["https://wpwebsitefix.com/og-image.png"],
   },
 };
+
+
 
 export default function Home() {
   return (
