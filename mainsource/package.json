@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 5001",
-    "build": "next build",
+    "build": "next build && npm run postbuild",
     "start": "next start -p 5001",
     "lint": "eslint",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap && copy .htaccess out\\.htaccess"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

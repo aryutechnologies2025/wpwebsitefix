@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "WP Website Fix",
     description:
-      "WP Website Fix delivers end-to-end WordPress website maintenance.",
+      "WP Website Fix delivers end-to-end WordPress website maintenance with strong security, fast loading speeds, regular updates, and custom solutions.",
     url: "https://wpwebsitefix.com",
     siteName: "WP Website Fix",
     images: [

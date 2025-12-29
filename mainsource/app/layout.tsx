@@ -64,25 +64,15 @@ export const metadata: Metadata = {
   description:
     "WP Website Fix delivers end-to-end WordPress website maintenance with strong security, fast loading speeds, regular updates, and custom solutions.",
 
-  alternates: {
-    canonical: "https://wpwebsitefix.com",
-  },
-
   robots: {
     index: true,
     follow: true,
   },
 
+  manifest: "/manifest.json",
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png" }],
-    other: [
-      { rel: "android-chrome", url: "/web-app-manifest-192x192.png" },
-      { rel: "android-chrome", url: "/web-app-manifest-512x512.png" },
-    ],
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
 
   openGraph: {
