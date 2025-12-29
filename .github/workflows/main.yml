@@ -1,22 +1,24 @@
+name: 🚀 WPwebsitefix Upload Files to Hostinger via FTP
+
 on:
   push:
     branches:
       - main
 
 jobs:
-  sftp-deploy:
+  ftp-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: 📥 Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: 📤 Upload Files to Hostinger via SFTP
-        uses: appleboy/scp-action@v0.1.7
+      - name: 📤 Upload Files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
-          host: ${{ secrets.FTP_HOST }}
+          server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 22
-          source: "./**"
-          target: ${{ secrets.REMOTE_DIR }}
+          local-dir: ./
+          server-dir: ${{ secrets.REMOTE_DIR }}
+          protocol: ftp
