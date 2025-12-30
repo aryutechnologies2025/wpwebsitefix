@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     siteName: "WPWebsiteFix",
     images: [
       {
-        url: "https://wpwebsitefix.com/og-image1.jpg", 
+        url: "https://wpwebsitefix.com/wordpress-landing-page-design-development-og-image.jpg", 
         width: 1200,
         height: 630,
         alt: "WordPress Landing Page Design & Development Services",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "WordPress Landing Page Design & Development",
     description:
       "High-converting WordPress landing pages designed to grow your business.",
-    images: ["https://wpwebsitefix.com/og-image1.jpg"],
+    images: ["https://wpwebsitefix.com/wordpress-landing-page-design-development-og-image.jpg"],
   },
 };
 
@@ -93,7 +93,7 @@ export default function Page() {
           "@type": "Organization",
           name: "WPWebsiteFix",
           url: "https://wpwebsitefix.com",
-          logo: "https://wpwebsitefix.com/og-image.png", 
+          logo: "https://wpwebsitefix.com/wordpress-landing-page-design-development-og-image.jpg", 
         },
         serviceType: "Web Design and Development",
         areaServed: "Worldwide",

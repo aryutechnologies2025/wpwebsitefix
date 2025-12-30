@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy | WPWebsiteFix",
     description:
       "Learn how WPWebsiteFix collects, uses, and protects your personal information.",
-    url: "https://wpwebsitefix.com/og-image.png",
+    url: "https://wpwebsitefix.com/og-image.jpg",
 
     siteName: "WPWebsiteFix",
     type: "article",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy | WPWebsiteFix",
     description:
       "Learn how WPWebsiteFix collects, uses, and protects your personal information.",
-    images: ["https://wpwebsitefix.com/og-image.png"],
+    images: ["https://wpwebsitefix.com/og-image.jpg"],
   },
 };
 

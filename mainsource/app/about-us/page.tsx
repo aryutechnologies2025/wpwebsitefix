@@ -47,7 +47,7 @@
 //       "WPWebsiteFix provides 12+ professional WordPress services including maintenance, security, speed optimization, development, WooCommerce, SEO, and custom solutions.",
 //     images: [
 //       {
-//         url: "https://wpwebsitefix.com/og-image.png",
+//         url: "https://wpwebsitefix.com/og-image.jpg",
 //         width: 1200,
 //         height: 630,
 //         alt: "About WPWebsiteFix – WordPress Support",
@@ -62,7 +62,7 @@
 //     title: "About WPWebsiteFix – WordPress Experts",
 //     description:
 //       "Discover WPWebsiteFix, a trusted WordPress agency offering maintenance, development, security, speed optimization, and custom WordPress solutions.",
-//           images: ["https://wpwebsitefix.com/og-image.png"],
+//           images: ["https://wpwebsitefix.com/og-image.jpg"],
 
 //   },
 // };
@@ -131,7 +131,7 @@ export const metadata: Metadata = {
       "WPWebsiteFix provides 12+ professional WordPress services including maintenance, security, speed optimization, development, WooCommerce, SEO, and custom solutions.",
     images: [
       {
-        url: "https://wpwebsitefix.com/og-image.png",
+        url: "https://wpwebsitefix.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "About WPWebsiteFix – WordPress Support",
@@ -146,7 +146,7 @@ export const metadata: Metadata = {
     title: "About WPWebsiteFix – WordPress Experts",
     description:
       "Discover WPWebsiteFix, a trusted WordPress agency offering maintenance, development, security, speed optimization, and custom WordPress solutions.",
-    images: ["https://wpwebsitefix.com/og-image.png"],
+    images: ["https://wpwebsitefix.com/og-image.jpg"],
   },
 };
 

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "WPWebsiteFix",
     images: [
       {
-        url: "https://wpwebsitefix.com/og-image.png",
+        url: "https://wpwebsitefix.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Terms & Conditions | WPWebsiteFix",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Terms & Conditions | WPWebsiteFix",
     description: "Review the Terms & Conditions for using WPWebsiteFix’s website and WordPress services.",
-    images: ["https://wpwebsitefix.com/og-image.png"],
+    images: ["https://wpwebsitefix.com/og-image.jpg"],
   },
 };
 

@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "WPWebsiteFix",
     images: [
       {
-        url: "https://wpwebsitefix.com/og-image.png",
+        url: "https://wpwebsitefix.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "WP Migration Service",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "WordPress Migration Services | Zero Downtime",
     description:
       "Professional WordPress site transfers with zero downtime and full SEO protection.",
-    images: ["https://wpwebsitefix.com/og-image.png"],
+    images: ["https://wpwebsitefix.com/og-image.jpg"],
   },
 };
 
@@ -89,7 +89,7 @@ export default function Page() {
           "@type": "Organization",
           name: "WPWebsiteFix",
           url: "https://wpwebsitefix.com",
-          logo: "https://wpwebsitefix.com/og-image.png",
+          logo: "https://wpwebsitefix.com/og-image.jpg",
         },
         areaServed: "Worldwide",
         serviceType: "Technical WordPress Support",

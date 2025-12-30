@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     siteName: "WP Website Fix",
     images: [
       {
-        url: "https://wpwebsitefix.com/og-image.png",
+        url: "https://wpwebsitefix.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "WP Website Fix – WordPress Experts",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: "WP Website Fix – WordPress Maintenance & Development Experts",
     description:
       "Professional WordPress maintenance and development services including security, speed optimization, bug fixing, and custom solutions.",
-    images: ["https://wpwebsitefix.com/og-image.png"],
+    images: ["https://wpwebsitefix.com/og-image.jpg"],
   },
 };
 
@@ -92,11 +92,11 @@ export default function Home() {
         url: brandUrl,
         logo: {
           "@type": "ImageObject",
-          url: `${brandUrl}/og-image.png`,
+          url: `${brandUrl}/og-image.jpg`,
           width: "512",
           height: "512",
         },
-        image: `${brandUrl}/og-image.png`,
+        image: `${brandUrl}/og-image.jpg`,
         sameAs: [
           "https://www.facebook.com/Fixmywpwebsite",
           "https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F68914508%2Fadmin%2Fdashboard%2F",

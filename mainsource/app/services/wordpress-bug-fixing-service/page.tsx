@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     siteName: "WPWebsiteFix",
     images: [
       {
-        url: "https://wpwebsitefix.com/og-image.png",
+        url: "https://wpwebsitefix.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "WordPress Bug Fixing Service",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     title: "WordPress Bug Fixing Service | WPWebsiteFix",
     description:
       "Fast and reliable WordPress troubleshooting for any error or crash.",
-    images: ["https://wpwebsitefix.com/og-image.png"],
+    images: ["https://wpwebsitefix.com/og-image.jpg"],
   },
 };
 
@@ -95,7 +95,7 @@ export default function Page() {
           "@type": "Organization",
           name: "WPWebsiteFix",
           url: "https://wpwebsitefix.com",
-          logo: "https://wpwebsitefix.com/og-image.png",
+          logo: "https://wpwebsitefix.com/og-image.jpg",
         },
         serviceType: "WordPress Maintenance & Repair",
         areaServed: { "@type": "Worldwide" },
