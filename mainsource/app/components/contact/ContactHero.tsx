@@ -143,6 +143,7 @@ const ContactHero = () => {
           </div>
 
           <MaskedTextReveal
+          as="h1"
             text="Share your vision with us, and let’s co-create a truly remarkable design!"
             className="text-[#00000099] md:text-lg"
           />

@@ -54,6 +54,7 @@ interface ServicesHeroSectionProps {
         <div className="">
           {heroData.headlineLines.map((line, index) => (
             <MaskedTextReveal
+            as="h1"
               key={index}
               text={line}
               className={`text-[36px] sm:text-[48px] md:text-[64px]  ${

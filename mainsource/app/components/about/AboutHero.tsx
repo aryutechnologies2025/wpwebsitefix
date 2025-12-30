@@ -99,7 +99,7 @@ import {
         <p className="text-[#00000099] tracking-widest">ABOUT US</p>
 
         <div className="text-[42px] md:text-[52px] lg:text-[62px] font-extrabold leading-[1.2] mt-6">
-          <MaskedTextReveal text="We Power the WordPress Behind Tomorrow’s" />
+          <MaskedTextReveal as="h1" text="We Power the WordPress Behind Tomorrow’s" />
 
           <AnimatedGradientText
             text="Billion-Dollar Brands"

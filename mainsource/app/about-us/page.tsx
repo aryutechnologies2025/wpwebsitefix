@@ -82,7 +82,6 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Script from "next/script";
 
-
 import AboutHero from "../components/about/AboutHero";
 
 /* -------------------- Dynamic Imports-------------------- */

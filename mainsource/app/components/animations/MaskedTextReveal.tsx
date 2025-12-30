@@ -1,5 +1,6 @@
 "use client";
-import React, { useRef } from "react";
+
+import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,6 +9,7 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 
 interface SmoothTextRevealProps {
   text: string;
+  as?: React.ElementType;
   className?: string;
   start?: string;
   delay?: number;
@@ -18,6 +20,7 @@ interface SmoothTextRevealProps {
 
 const SmoothTextReveal: React.FC<SmoothTextRevealProps> = ({
   text,
+  as: Tag = "p",
   className = "",
   start = "top 85%",
   delay = 0,
@@ -25,9 +28,9 @@ const SmoothTextReveal: React.FC<SmoothTextRevealProps> = ({
   stagger = 0.025,
   ease = "power3.out",
 }) => {
-  const textRef = useRef<HTMLParagraphElement>(null);
+  const textRef = useRef<HTMLElement | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!textRef.current) return;
 
     const split = new SplitText(textRef.current, {
@@ -41,8 +44,8 @@ const SmoothTextReveal: React.FC<SmoothTextRevealProps> = ({
       wrapper.style.overflow = "hidden";
       wrapper.style.verticalAlign = "bottom";
       wrapper.style.willChange = "transform, opacity";
-      wrapper.style.paddingRight = "0.05em"; // tiny padding to prevent clipping
-      // wrapper.style.paddingBottom = "0.09em"; // tiny padding to prevent clipping
+      wrapper.style.paddingRight = "0.05em";
+
       word.parentNode?.insertBefore(wrapper, word);
       wrapper.appendChild(word);
     });
@@ -62,7 +65,6 @@ const SmoothTextReveal: React.FC<SmoothTextRevealProps> = ({
             trigger: textRef.current,
             start,
             toggleActions: "play none none reverse",
-            // toggleActions: "play reverse play reverse", // repeat on scroll in & out
           },
         }
       );
@@ -75,9 +77,12 @@ const SmoothTextReveal: React.FC<SmoothTextRevealProps> = ({
   }, [delay, duration, stagger, start, ease]);
 
   return (
-    <p ref={textRef} className={` overflow-hidden  ${className}`}>
+    <Tag
+      ref={textRef}
+      className={`overflow-hidden ${className}`}
+    >
       {text}
-    </p>
+    </Tag>
   );
 };
 

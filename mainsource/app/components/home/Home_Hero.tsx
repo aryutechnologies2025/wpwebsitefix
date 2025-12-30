@@ -62,7 +62,7 @@ const Home_Hero = () => {
 
         {/* Headline */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-snug sm:leading-tight md:leading-tight mt-2 tracking-tighter">
-          <MaskedTextReveal text="We use our WordPress expertise to power your online presence" />
+          <MaskedTextReveal as="h1" text="We use our WordPress expertise to power your online presence" />
         </h1>
 
         <div className="flex items-center gap-2 mt-5">
