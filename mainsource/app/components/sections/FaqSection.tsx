@@ -171,6 +171,7 @@ const FaqItem = ({
 
   return (
     <div
+    id="faq"
       className="shadow flex flex-col gap-3 p-4 md:p-6 rounded-2xl cursor-pointer transition-all"
       onClick={() => setActiveIndex(activeIndex === index ? null : index)}
     >

@@ -1,63 +1,53 @@
 import { WordPressSeoServices } from "../../data";
-
 import dynamic from "next/dynamic";
-const ServicesHeroSection = dynamic(
-  () => import("@/app/components/sections/ServicesHeroSection")
-);
+import Script from "next/script";
+import type { Metadata } from "next";
 
+import ServicesHeroSection from "@/app/components/sections/ServicesHeroSection";
+
+/* -------------------- Dynamic Imports (Below the Fold) -------------------- */
 const ServicesIncludesSection = dynamic(
   () => import("@/app/components/sections/ServicesIncludesSection")
 );
-
 const ServiceOurProcessSection = dynamic(
   () => import("@/app/components/sections/ServiceOurProcessSection")
 );
-
 const ServiceWhatSetUsApart = dynamic(
   () => import("@/app/components/sections/ServiceWhatSetUsApart")
 );
-
 const CtaSection = dynamic(
   () => import("@/app/components/sections/CtaSection")
 );
-
 const FaqSection = dynamic(
   () => import("@/app/components/sections/FaqSection")
 );
-
 const DarkThemeCtaSection = dynamic(
   () => import("@/app/components/sections/DarkThemeCtaSection")
 );
 
-import type { Metadata } from "next";
-
+/* -------------------- METADATA -------------------- */
 export const metadata: Metadata = {
-  title: "WordPress SEO Services | WPWebsiteFix",
-
+  title: "Technical WordPress SEO Services | Boost Rankings & Traffic",
   description:
-    "Improve rankings, increase organic traffic, and grow your business with our expert WordPress SEO services. Technical SEO, on-page optimization, and performance-driven results.",
-
+    "Professional WordPress SEO services specializing in technical audits, on-page optimization, and core web vitals. Increase your organic traffic with WPWebsiteFix.",
   alternates: {
     canonical: "https://wpwebsitefix.com/services/wordpress-seo-services/",
   },
-
   keywords: [
     "WordPress SEO services",
-    "WordPress SEO optimization",
     "WordPress technical SEO",
-    "WordPress search engine optimization",
-    "SEO services for WordPress websites",
+    "on-page WordPress optimization",
+    "WordPress Core Web Vitals fixing",
+    "SEO audit for WordPress",
   ],
-
   robots: {
     index: true,
     follow: true,
   },
-
   openGraph: {
-    title: "WordPress SEO Services",
+    title: "WordPress SEO Services | Technical & On-Page Optimization",
     description:
-      "Professional WordPress SEO services to improve rankings, traffic, and visibility.",
+      "Grow your business with data-driven WordPress SEO. We optimize for speed, structure, and search engines.",
     url: "https://wpwebsitefix.com/services/wordpress-seo-services/",
     siteName: "WPWebsiteFix",
     images: [
@@ -70,31 +60,98 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "WordPress SEO Services",
+    title: "WordPress SEO Services | WPWebsiteFix",
     description:
-      "Expert WordPress SEO services to grow traffic and improve rankings.",
+      "Expert technical SEO for WordPress websites. Rank higher and grow faster.",
     images: ["https://wpwebsitefix.com/og-image.png"],
   },
 };
 
-const page = () => {
+/* -------------------- PAGE -------------------- */
+export default function Page() {
   const { heroData, includesData, processData, setUsApartData, faqData } =
     WordPressSeoServices;
 
-  return (
-    <div>
-      <ServicesHeroSection heroData={heroData} />
-      <ServicesIncludesSection includesData={includesData} />
-      <ServiceOurProcessSection processData={processData} />
-      <ServiceWhatSetUsApart setUsApartData={setUsApartData} />
-      <CtaSection />
-      <FaqSection faqData={faqData} />
-      <DarkThemeCtaSection />
-    </div>
-  );
-};
+  const pageUrl = "https://wpwebsitefix.com/services/wordpress-seo-services/";
 
-export default page;
+  /* -------------------- UNIFIED SCHEMA (GRAPH) -------------------- */
+  const unifiedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${pageUrl}#service`,
+        name: "WordPress SEO Services",
+        description:
+          "Technical and On-page Search Engine Optimization specifically for WordPress websites, including speed optimization and schema markup.",
+        url: pageUrl,
+        provider: {
+          "@type": "Organization",
+          name: "WPWebsiteFix",
+          url: "https://wpwebsitefix.com",
+          logo: "https://wpwebsitefix.com/og-image.png",
+        },
+        serviceType: "Search Engine Optimization Service",
+        areaServed: "Worldwide",
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: faqData.map((faq: any) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://wpwebsitefix.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: "https://wpwebsitefix.com/services",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "SEO Services",
+            item: pageUrl,
+          },
+        ],
+      },
+    ],
+  };
+
+  return (
+    <>
+      <Script
+        id="seo-service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(unifiedSchema) }}
+      />
+
+      <main>
+        <ServicesHeroSection heroData={heroData} />
+        <ServicesIncludesSection includesData={includesData} />
+        <ServiceOurProcessSection processData={processData} />
+        <ServiceWhatSetUsApart setUsApartData={setUsApartData} />
+        <CtaSection />
+        <FaqSection faqData={faqData} />
+        <DarkThemeCtaSection />
+      </main>
+    </>
+  );
+}

@@ -1,107 +1,11 @@
-// import { WordpressBugFixingService } from "../../data";
-
-// import dynamic from "next/dynamic";
-// const ServicesHeroSection = dynamic(
-//   () => import("@/app/components/sections/ServicesHeroSection")
-// );
-
-// const ServicesIncludesSection = dynamic(
-//   () => import("@/app/components/sections/ServicesIncludesSection")
-// );
-
-// const ServiceOurProcessSection = dynamic(
-//   () => import("@/app/components/sections/ServiceOurProcessSection")
-// );
-
-// const ServiceWhatSetUsApart = dynamic(
-//   () => import("@/app/components/sections/ServiceWhatSetUsApart")
-// );
-
-// const CtaSection = dynamic(
-//   () => import("@/app/components/sections/CtaSection")
-// );
-
-// const FaqSection = dynamic(
-//   () => import("@/app/components/sections/FaqSection")
-// );
-
-// const DarkThemeCtaSection = dynamic(
-//   () => import("@/app/components/sections/DarkThemeCtaSection")
-// );
-
-// import type { Metadata } from "next";
-
-// export const metadata: Metadata = {
-//   title: "WordPress Bug Fixing Service | WPWebsiteFix",
-//   description:
-//     "Fix WordPress errors, crashes, white screen issues, and plugin or theme bugs with WPWebsiteFix’s expert WordPress bug fixing service. Fast, secure, and reliable solutions.",
-
-//   keywords: [
-//     "WordPress bug fixing service",
-//     "Fix WordPress errors",
-//     "WordPress troubleshooting",
-//     "WordPress white screen fix",
-//     "WordPress plugin issues",
-//     "WordPress theme bugs",
-//     "WordPress support services",
-//   ],
-
-//   alternates: {
-//     canonical:
-//       "https://wpwebsitefix.com/services/wordpress-bug-fixing-service/",
-//   },
-
-//   robots: {
-//     index: true,
-//     follow: true,
-//   },
-
-//   openGraph: {
-//     title: "WordPress Bug Fixing Service | WPWebsiteFix",
-//     description:
-//       "Resolve WordPress errors, crashes, plugin and theme issues with WPWebsiteFix’s professional bug fixing service.",
-//     url: "https://wpwebsitefix.com/services/wordpress-bug-fixing-service/",
-//     siteName: "WPWebsiteFix",
-//     type: "website",
-//   },
-
-//   twitter: {
-//     card: "summary_large_image",
-//     title: "WordPress Bug Fixing Service | WPWebsiteFix",
-//     description:
-//       "Get fast and reliable WordPress bug fixing services to resolve website errors and crashes.",
-//   },
-// };
-
-// export default function Page() {
-//   const { heroData, includesData, processData, setUsApartData, faqData } =
-//     WordpressBugFixingService;
-
-//   return (
-//     <div>
-//       <ServicesHeroSection heroData={heroData} />
-//       <ServicesIncludesSection includesData={includesData} />
-//       <ServiceOurProcessSection processData={processData} />
-//       <ServiceWhatSetUsApart setUsApartData={setUsApartData} />
-//       <CtaSection />
-//       <FaqSection faqData={faqData} />
-//       <DarkThemeCtaSection />
-//     </div>
-//   );
-// }
-
-
-
-
 import { WordpressBugFixingService } from "../../data";
 import dynamic from "next/dynamic";
 import Script from "next/script";
 import type { Metadata } from "next";
 
+import ServicesHeroSection from "@/app/components/sections/ServicesHeroSection";
+
 /* -------------------- Dynamic Imports -------------------- */
-const ServicesHeroSection = dynamic(
-  () => import("@/app/components/sections/ServicesHeroSection")
-);
 const ServicesIncludesSection = dynamic(
   () => import("@/app/components/sections/ServicesIncludesSection")
 );
@@ -123,34 +27,29 @@ const DarkThemeCtaSection = dynamic(
 
 /* -------------------- METADATA -------------------- */
 export const metadata: Metadata = {
-  title: "WordPress Bug Fixing Service | WPWebsiteFix",
-
+  title: "Professional WordPress Bug Fixing Service | Fix Site Errors Fast",
   description:
-    "Fix WordPress errors, crashes, white screen issues, and plugin or theme bugs with WPWebsiteFix’s expert WordPress bug fixing service. Fast, secure, and reliable solutions.",
-
-  keywords: [
-    "WordPress bug fixing service",
-    "Fix WordPress errors",
-    "WordPress troubleshooting",
-    "WordPress white screen fix",
-    "WordPress plugin issues",
-    "WordPress theme bugs",
-  ],
-
+    "Expert WordPress bug fixing for 500 errors, White Screen of Death, plugin conflicts, and theme bugs. Fast, secure troubleshooting to get your site back online.",
   alternates: {
     canonical:
       "https://wpwebsitefix.com/services/wordpress-bug-fixing-service/",
   },
-
+  keywords: [
+    "WordPress bug fixing service",
+    "Fix WordPress errors",
+    "WordPress 500 internal server error fix",
+    "WordPress white screen of death troubleshooting",
+    "WordPress plugin conflict repair",
+    "Emergency WordPress help",
+  ],
   robots: {
     index: true,
     follow: true,
   },
-
   openGraph: {
-    title: "WordPress Bug Fixing Service | WPWebsiteFix",
+    title: "WordPress Bug Fixing Service | Fast Error Resolution",
     description:
-      "Resolve WordPress errors, crashes, plugin and theme issues with WPWebsiteFix’s professional bug fixing service.",
+      "Don't let bugs kill your traffic. Our experts fix WordPress crashes, plugin errors, and theme issues quickly.",
     url: "https://wpwebsitefix.com/services/wordpress-bug-fixing-service/",
     siteName: "WPWebsiteFix",
     images: [
@@ -163,12 +62,11 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
     title: "WordPress Bug Fixing Service | WPWebsiteFix",
     description:
-      "Fast and reliable WordPress bug fixing services to resolve website errors and crashes.",
+      "Fast and reliable WordPress troubleshooting for any error or crash.",
     images: ["https://wpwebsitefix.com/og-image.png"],
   },
 };
@@ -178,98 +76,88 @@ export default function Page() {
   const { heroData, includesData, processData, setUsApartData, faqData } =
     WordpressBugFixingService;
 
-  /* -------------------- FAQ SCHEMA (DYNAMIC) -------------------- */
-  const faqSchema = {
+  const pageUrl =
+    "https://wpwebsitefix.com/services/wordpress-bug-fixing-service/";
+
+  /* -------------------- UNIFIED SCHEMA GRAPH -------------------- */
+  // Interconnecting the Service, FAQ, and Organization entities
+  const unifiedSchema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqData.map((faq: any) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${pageUrl}#service`,
+        name: "WordPress Bug Fixing Service",
+        description:
+          "Professional troubleshooting for WordPress errors, including White Screen of Death, PHP errors, and plugin/theme conflicts.",
+        url: pageUrl,
+        provider: {
+          "@type": "Organization",
+          name: "WPWebsiteFix",
+          url: "https://wpwebsitefix.com",
+          logo: "https://wpwebsitefix.com/og-image.png",
+        },
+        serviceType: "WordPress Maintenance & Repair",
+        areaServed: { "@type": "Worldwide" },
       },
-    })),
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: faqData.map((faq: any) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://wpwebsitefix.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: "https://wpwebsitefix.com/services",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Bug Fixing",
+            item: pageUrl,
+          },
+        ],
+      },
+    ],
   };
 
   return (
     <>
-      {/* ==================== SERVICE SCHEMA ==================== */}
+      {/* Combined Schema Script */}
       <Script
-        id="service-schema"
+        id="bug-fixing-unified-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            name: "WordPress Bug Fixing Service",
-            description:
-              "Professional WordPress bug fixing service to resolve errors, crashes, plugin conflicts, theme issues, and white screen problems.",
-            url: "https://wpwebsitefix.com/services/wordpress-bug-fixing-service/",
-            serviceType: "WordPress Bug Fixing",
-            provider: {
-              "@type": "Organization",
-              name: "WPWebsiteFix",
-              url: "https://wpwebsitefix.com",
-              logo: "https://wpwebsitefix.com/logo.png",
-            },
-            areaServed: {
-              "@type": "Worldwide",
-            },
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(unifiedSchema) }}
       />
 
-      {/* ==================== FAQ SCHEMA (FROM faqData) ==================== */}
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
-        }}
-      />
-
-      {/* ==================== BREADCRUMB SCHEMA ==================== */}
-      <Script
-        id="breadcrumb-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                name: "Home",
-                item: "https://wpwebsitefix.com",
-              },
-              {
-                "@type": "ListItem",
-                position: 2,
-                name: "Services",
-                item: "https://wpwebsitefix.com/services",
-              },
-              {
-                "@type": "ListItem",
-                position: 3,
-                name: "WordPress Bug Fixing Service",
-                item:
-                  "https://wpwebsitefix.com/services/wordpress-bug-fixing-service/",
-              },
-            ],
-          }),
-        }}
-      />
-
-      {/* ==================== PAGE CONTENT ==================== */}
-      <ServicesHeroSection heroData={heroData} />
-      <ServicesIncludesSection includesData={includesData} />
-      <ServiceOurProcessSection processData={processData} />
-      <ServiceWhatSetUsApart setUsApartData={setUsApartData} />
-      <CtaSection />
-      <FaqSection faqData={faqData} />
-      <DarkThemeCtaSection />
+      {/* Main Semantic Wrapper */}
+      <main>
+        <ServicesHeroSection heroData={heroData} />
+        <ServicesIncludesSection includesData={includesData} />
+        <ServiceOurProcessSection processData={processData} />
+        <ServiceWhatSetUsApart setUsApartData={setUsApartData} />
+        <CtaSection />
+        <FaqSection faqData={faqData} />
+        <DarkThemeCtaSection />
+      </main>
     </>
   );
 }

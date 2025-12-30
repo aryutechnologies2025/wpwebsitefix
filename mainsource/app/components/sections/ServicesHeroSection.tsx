@@ -45,7 +45,7 @@ interface ServicesHeroSectionProps {
   }, []);
 
   return (
-    <section className="">
+    <section id="service">
       <div className="w-full md:w-[90vw] mx-auto mt-5">
         <Header />
       </div>

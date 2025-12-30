@@ -83,13 +83,12 @@ export const Header = ({ shadow = true }: HeaderProps) => {
         : "text-[#1E1E1E] hover:text-[#FF6107]/70"
     }`;
 
-const mobileLinkClass = (href: string) =>
-  `text-3xl font-bold transition-all duration-300 pl-4 border-l-4 ${
-    pathname === href ||  pathname.startsWith("/wordpress-")
-      ? "text-[#FF6107] border-[#FF6107]"
-      : "text-gray-800 border-transparent hover:text-[#FF6107]"
-  }`;
-
+  const mobileLinkClass = (href: string) =>
+    `text-3xl font-bold transition-all duration-300 pl-4 border-l-4 ${
+      pathname === href || pathname.startsWith("/wordpress-")
+        ? "text-[#FF6107] border-[#FF6107]"
+        : "text-gray-800 border-transparent hover:text-[#FF6107]"
+    }`;
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -139,7 +138,6 @@ const mobileLinkClass = (href: string) =>
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
-              
               <p
                 className={`cursor-pointer transition-all duration-500 ${
                   pathname.startsWith("/services")
@@ -210,7 +208,7 @@ const mobileLinkClass = (href: string) =>
                       : maintenanceServices
                     ).map((service, index) => (
                       <Link
-                      key={index}
+                        key={index}
                         href={service.href}
                         className={`block py-1 text-lg transition ${
                           pathname === service.href
@@ -348,7 +346,12 @@ const mobileLinkClass = (href: string) =>
             Home
           </Link>
 
-          <Link href="/wordpress-maintenance-and-development-services" className={mobileLinkClass("/wordpress-maintenance-and-development-services")}>
+          <Link
+            href="/wordpress-maintenance-and-development-services"
+            className={mobileLinkClass(
+              "/wordpress-maintenance-and-development-services"
+            )}
+          >
             Services
           </Link>
           <Link href="/about-us" className={mobileLinkClass("/about-us")}>
@@ -359,8 +362,6 @@ const mobileLinkClass = (href: string) =>
           </Link>
         </nav>
       </div>
-
-      
     </header>
   );
 };

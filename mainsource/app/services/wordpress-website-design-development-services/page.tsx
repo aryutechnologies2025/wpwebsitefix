@@ -1,64 +1,54 @@
 import { WordpressWebsiteDesignDevelopmentServices } from "../../data";
-
 import dynamic from "next/dynamic";
-const ServicesHeroSection = dynamic(
-  () => import("@/app/components/sections/ServicesHeroSection")
-);
+import Script from "next/script";
+import type { Metadata } from "next";
 
+import ServicesHeroSection from "@/app/components/sections/ServicesHeroSection";
+
+/* -------------------- Dynamic Imports-------------------- */
 const ServicesIncludesSection = dynamic(
   () => import("@/app/components/sections/ServicesIncludesSection")
 );
-
 const ServiceOurProcessSection = dynamic(
   () => import("@/app/components/sections/ServiceOurProcessSection")
 );
-
 const ServiceWhatSetUsApart = dynamic(
   () => import("@/app/components/sections/ServiceWhatSetUsApart")
 );
-
 const CtaSection = dynamic(
   () => import("@/app/components/sections/CtaSection")
 );
-
 const FaqSection = dynamic(
   () => import("@/app/components/sections/FaqSection")
 );
-
 const DarkThemeCtaSection = dynamic(
   () => import("@/app/components/sections/DarkThemeCtaSection")
 );
 
-import type { Metadata } from "next";
-
+/* -------------------- METADATA -------------------- */
 export const metadata: Metadata = {
   title: "WordPress Website Design & Development Services | WPWebsiteFix",
-
   description:
-    "Get a professional, fast, and scalable website with our WordPress website design & development services. Custom-built, SEO-friendly, and conversion-focused by WPWebsiteFix.",
-
+    "Get a professional, fast, and scalable website with our WordPress website design & development services. Custom-built, SEO-friendly, and conversion-focused.",
   alternates: {
     canonical:
       "https://wpwebsitefix.com/services/wordpress-website-design-development-services/",
   },
-
   keywords: [
     "WordPress website design",
     "WordPress website development",
     "custom WordPress development",
-    "WordPress web design services",
     "business WordPress websites",
+    "professional WordPress design agency",
   ],
-
   robots: {
     index: true,
     follow: true,
   },
-
   openGraph: {
-    title: "WordPress Website Design & Development Services",
+    title: "Expert WordPress Design & Development Services",
     description:
-      "Custom WordPress website design & development services to build fast, secure, and scalable websites.",
+      "Build a high-performing WordPress website with expert design & development services tailored to your business.",
     url: "https://wpwebsitefix.com/services/wordpress-website-design-development-services/",
     siteName: "WPWebsiteFix",
     images: [
@@ -71,7 +61,6 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
     title: "WordPress Website Design & Development Services",
@@ -81,21 +70,90 @@ export const metadata: Metadata = {
   },
 };
 
-const page = () => {
+/* -------------------- PAGE -------------------- */
+export default function Page() {
   const { heroData, includesData, processData, setUsApartData, faqData } =
     WordpressWebsiteDesignDevelopmentServices;
 
-  return (
-    <div>
-      <ServicesHeroSection heroData={heroData} />
-      <ServicesIncludesSection includesData={includesData} />
-      <ServiceOurProcessSection processData={processData} />
-      <ServiceWhatSetUsApart setUsApartData={setUsApartData} />
-      <CtaSection />
-      <FaqSection faqData={faqData} />
-      <DarkThemeCtaSection />
-    </div>
-  );
-};
+  const pageUrl =
+    "https://wpwebsitefix.com/services/wordpress-website-design-development-services/";
 
-export default page;
+  /* -------------------- UNIFIED SCHEMA (GRAPH) -------------------- */
+  const unifiedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${pageUrl}#service`,
+        name: "WordPress Website Design & Development Services",
+        description:
+          "Full-cycle WordPress website creation including custom UI/UX design, responsive development, and SEO optimization.",
+        url: pageUrl,
+        provider: {
+          "@type": "Organization",
+          name: "WPWebsiteFix",
+          url: "https://wpwebsitefix.com",
+          logo: "https://wpwebsitefix.com/og-image.png",
+        },
+        serviceType: "Web Development Service",
+        areaServed: "Worldwide",
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: faqData.map((faq: any) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://wpwebsitefix.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: "https://wpwebsitefix.com/services",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Design & Development",
+            item: pageUrl,
+          },
+        ],
+      },
+    ],
+  };
+
+  return (
+    <>
+      <Script
+        id="design-dev-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(unifiedSchema) }}
+      />
+
+      <main>
+        <ServicesHeroSection heroData={heroData} />
+        <ServicesIncludesSection includesData={includesData} />
+        <ServiceOurProcessSection processData={processData} />
+        <ServiceWhatSetUsApart setUsApartData={setUsApartData} />
+        <CtaSection />
+        <FaqSection faqData={faqData} />
+        <DarkThemeCtaSection />
+      </main>
+    </>
+  );
+}

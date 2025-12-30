@@ -1,29 +1,16 @@
-import dynamic from "next/dynamic";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
+import Script from "next/script";
 
-const ContactHero = dynamic(() =>
-  import("../components/contact/ContactHero")
+import ContactHero from "../components/contact/ContactHero";
+
+/* -------------------- Dynamic Imports-------------------- */
+const ContactSecondSection = dynamic(
+  () => import("../components/contact/ContactSecondSection")
 );
-
-const ContactSecondSection = dynamic(() =>
-  import("../components/contact/ContactSecondSection")
-);
-
-const CtaSection = dynamic(() =>
-  import("../components/sections/CtaSection")
-);
-
-// export const metadata = {
-//   title: "contact us",
-//   description:
-//     "Need help with WordPress? Contact WPWebsiteFix for expert maitenance, security, updates, and reliable support to keep your website performing at its best.",
-//   keywords: "contact us wordpress",
-// };
-
-
+const CtaSection = dynamic(() => import("../components/sections/CtaSection"));
 
 export const metadata: Metadata = {
-
   title: "Contact WPWebsiteFix – WordPress Maintenance & Support Experts",
   description:
     "Need help with WordPress? Contact WPWebsiteFix for professional WordPress maintenance, security, speed optimization, updates, and reliable technical support.",
@@ -71,13 +58,76 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function Page() {
+  const brandUrl = "https://wpwebsitefix.com";
+  const pageUrl = "https://wpwebsitefix.com/contact-us/";
+
+  /* -------------------- CONTACT PAGE SCHEMA -------------------- */
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: "Contact WPWebsiteFix",
+        description:
+          "Get in touch with WordPress experts for maintenance, security, and development support.",
+        publisher: { "@id": `${brandUrl}/#organization` },
+        mainEntity: {
+          "@type": "Organization",
+          "@id": `${brandUrl}/#organization`,
+          name: "WPWebsiteFix",
+          contactPoint: {
+            "@type": "ContactPoint",
+            email: "support@wpwebsitefix.com",
+            contactType: "customer support",
+            availableLanguage: "English",
+            areaServed: "Worldwide",
+          },
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: brandUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Contact Us",
+            item: pageUrl,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
-    <div>
-      <ContactHero />
-      <ContactSecondSection />
-      <CtaSection />
-    </div>
+    <>
+      <Script
+        id="contact-page-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
+
+      <main>
+        {/* Semantic Sectioning with IDs for anchor linking */}
+        <section id="contact-hero">
+          <ContactHero />
+        </section>
+
+        <section id="contact-details">
+          <ContactSecondSection />
+        </section>
+
+        <CtaSection />
+      </main>
+    </>
   );
 }
