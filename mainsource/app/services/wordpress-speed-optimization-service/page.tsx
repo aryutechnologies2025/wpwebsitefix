@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     siteName: "WPWebsiteFix",
     images: [
       {
-        url: "https://wpwebsitefix.com/og-image.jpg",
+        url: "https://wpwebsitefix.com/wp-speed-og-image.jpg",
         width: 1200,
         height: 630,
         alt: "WordPress Speed Optimization Service",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "WordPress Speed Optimization Service | WPWebsiteFix",
     description:
       "Boost your search rankings and conversion rates with a faster WordPress website.",
-    images: ["https://wpwebsitefix.com/og-image.jpg"],
+    images: ["https://wpwebsitefix.com/wp-speed-og-image.jpg"],
   },
 };
 

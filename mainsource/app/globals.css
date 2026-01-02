@@ -90,3 +90,62 @@ html, body {
   fill: #FF8640 !important;
 }
 
+
+
+
+/* Entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* WhatsApp pulse */
+@keyframes pingSlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.animate-pingSlow {
+  animation: pingSlow 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Online dot */
+@keyframes onlinePing {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-onlinePing {
+  animation: onlinePing 1.5s ease-out infinite;
+}
+
+/* Magnetic smoothness */
+.magnetic {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}

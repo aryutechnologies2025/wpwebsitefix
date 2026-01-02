@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     siteName: "WPWebsiteFix",
     images: [
       {
-        url: "https://wpwebsitefix.com/wordpress-landing-page-design-development-og-image.jpg", 
+        url: "https://wpwebsitefix.com/wp-landing-page-design-og-image.jpg", 
         width: 1200,
         height: 630,
         alt: "WordPress Landing Page Design & Development Services",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "WordPress Landing Page Design & Development",
     description:
       "High-converting WordPress landing pages designed to grow your business.",
-    images: ["https://wpwebsitefix.com/wordpress-landing-page-design-development-og-image.jpg"],
+    images: ["https://wpwebsitefix.com/wp-landing-page-design-og-image.jpg"],
   },
 };
 

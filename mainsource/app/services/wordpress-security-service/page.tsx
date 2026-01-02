@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "WPWebsiteFix",
     images: [
       {
-        url: "https://wpwebsitefix.com/og-image.jpg",
+        url: "https://wpwebsitefix.com/wp-security-og-image.jpg",
         width: 1200,
         height: 630,
         alt: "WordPress Security Service",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title: "WordPress Security & Malware Removal | WPWebsiteFix",
     description:
       "Keep your site safe with professional WordPress security monitoring and firewall protection.",
-    images: ["https://wpwebsitefix.com/og-image.jpg"],
+    images: ["https://wpwebsitefix.com/wp-security-og-image.jpg"],
   },
 };
 

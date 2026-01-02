@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     siteName: "WPWebsiteFix",
     images: [
       {
-        url: "https://wpwebsitefix.com/og-image.jpg",
+        url: "https://wpwebsitefix.com/wp-update-og-image.jpg",
         width: 1200,
         height: 630,
         alt: "WordPress Update Services",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "Professional WordPress Update Services | WPWebsiteFix",
     description:
       "Keep your site secure and functional with professional WordPress maintenance and updates.",
-    images: ["https://wpwebsitefix.com/og-image.jpg"],
+    images: ["https://wpwebsitefix.com/wp-update-og-image.jpg"],
   },
 };
 
