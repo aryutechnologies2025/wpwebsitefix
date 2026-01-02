@@ -11,6 +11,8 @@ import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import aryuLogo from '../../assets/icons/aryu-logo.svg';
 
 export const Footer = () => {
+    const year = new Date().getFullYear();
+
   return (
     <section className="p-5 sm:p-6 md:p-12 lg:p-20 bg-white">
       {/* Top Section */}
@@ -213,7 +215,7 @@ export const Footer = () => {
 
       {/* Bottom Section */}
       <div className="flex flex-col md:flex-row justify-between mt-12 gap-2 md:gap-0 ">
-        <p>© WPFix Website 2025. All rights reserved.</p>
+        <p>© WPFix Website {year}. All rights reserved.</p>
 
         <Link href="/terms-and-conditions">Terms & Conditions.</Link>
 
