@@ -150,7 +150,7 @@ export const Header = ({ shadow = true }: HeaderProps) => {
 
               {/* === FULL WIDTH MEGA MENU CONTAINER === */}
               <div
-                className={`absolute mx-auto left-1/2 text-center -translate-x-1/2 top-full w-[90vw]  mt-1 bg-white rounded-3xl shadow-xl transition-all duration-500 origin-top ${
+                className={`absolute mx-auto left-1/2 text-center -translate-x-1/2 top-10 w-[90vw]  mt-1 bg-white rounded-3xl shadow-xl transition-all duration-500 origin-top ${
                   isServicesOpen
                     ? "opacity-100 translate-y-0 scale-100 visible"
                     : "opacity-0 -translate-y-2 scale-95 invisible"
