@@ -130,12 +130,12 @@ const ContactHero = () => {
           <div className="-space-y-5 md:-space-y-8">
             <MaskedTextReveal
               text="Let’s Spark a"
-              className="text-[42px] md:text-[52px] lg:text-[62px] font-extrabold"
+              className="text-[38px] sm:text-[42px] md:text-[52px] lg:text-[62px] font-extrabold"
             />
             <AnimatedGradientText
               text="Connections"
               colors={["#FE457D", "#FBD500", "#FE457D"]}
-              className="text-[42px] md:text-[52px] lg:text-[62px] font-extrabold"
+              className="text-[38px] sm:text-[42px] md:text-[52px] lg:text-[62px] font-extrabold"
               duration={10}
               reverse={true}
               loop={true}
@@ -154,7 +154,7 @@ const ContactHero = () => {
           {/* Contact Form */}
           <form
             onSubmit={handleSubmit}
-            className="border border-[#FF6107] text-[17px] grow p-6 md:p-10 rounded-4xl flex flex-col gap-6 lg:w-2/3"
+            className="border border-[#FF6107] text-[17px] grow p-4 sm:p-6 md:p-10 rounded-2xl md:rounded-3xl lg:rounded-4xl flex flex-col gap-6 lg:w-2/3"
           >
             {/* Full Name */}
             <div>
@@ -163,7 +163,7 @@ const ContactHero = () => {
                 name="fullName"
                 value={form.fullName}
                 onChange={handleChange}
-                className="border-b border-[#9E9C9C] pb-2 w-full outline-none"
+                className="border-b border-[#9E9C9C] pb-2 w-full outline-none text-sm md:text-base"
                 placeholder="Full Name"
               />
               {errors.fullName && (
@@ -177,7 +177,7 @@ const ContactHero = () => {
                 name="companyName"
                 value={form.companyName}
                 onChange={handleChange}
-                className="border-b border-[#9E9C9C] pb-2 w-full outline-none"
+                className="border-b border-[#9E9C9C] pb-2 w-full outline-none text-sm md:text-base"
                 placeholder="Company Name (optional)"
               />
             </div>
@@ -188,7 +188,7 @@ const ContactHero = () => {
                 name="mobile"
                 value={form.mobile}
                 onChange={handleChange}
-                className="border-b border-[#9E9C9C] pb-2 w-full outline-none"
+                className="border-b border-[#9E9C9C] pb-2 w-full outline-none text-sm md:text-base"
                 placeholder="Mobile Number"
               />
               {errors.mobile && (
@@ -202,7 +202,7 @@ const ContactHero = () => {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                className="border-b border-[#9E9C9C] pb-2 w-full outline-none"
+                className="border-b border-[#9E9C9C] pb-2 w-full outline-none text-sm md:text-base"
                 placeholder="Email Address"
               />
               {errors.email && (
@@ -211,14 +211,16 @@ const ContactHero = () => {
             </div>
             {/* Service Selection */}
             <div>
-              <p className="text-black/50">What service are you looking for?</p>
-              <div className="flex gap-3 mt-2 md:font-semibold flex-wrap">
-                {["Design", "Development"].map((s) => (
+              <p className="text-black/50 text-sm md:text-base">What service are you looking for?</p>
+              <div className="flex gap-3 mt-2 md:font-medium lg:font-semibold flex-wrap">
+             
+
+                {["Design", "Development","Maintainance","Bug Fixing"].map((s) => (
                   <button
                     key={s}
                     type="button"
                     onClick={() => handleServiceClick(s)}
-                    className={`rounded-full border hover:border-gray-300 px-2 md:px-4 py-0.5 md:py-1 transition cursor-pointer ${
+                    className={`text-sm md:text-base rounded-full border hover:border-gray-300 px-2 md:px-4 py-0.5 md:py-1 transition cursor-pointer ${
                       form.service === s
                         ? "border-[#FF6107] text-[#FF6107]"
                         : "border-[#868484] text-[#595858]"
@@ -232,6 +234,8 @@ const ContactHero = () => {
                 <p className="text-red-500 text-sm mt-1">{errors.service}</p>
               )}
             </div>
+
+
             {/* Message */}
             <div>
               <textarea
@@ -240,7 +244,7 @@ const ContactHero = () => {
                 onChange={handleChange}
                 placeholder="Tell us a little about your vision..."
                 rows={5}
-                className="border-b border-[#9E9C9C] w-full outline-none"
+                className="border-b border-[#9E9C9C] w-full outline-none text-sm md:text-base"
               ></textarea>
             </div>
 
@@ -285,10 +289,11 @@ const ContactHero = () => {
             <div>
               <p className="text-[#FF6107] text-lg font-medium">Call us</p>
               <Link
-                href="tel:9994715106"
+                href="tel:+919994715106"
                 className="flex mt-2 md:mt-4 md:text-lg font-medium items-center"
+                aria-label="Call us at +91 99947 15106"
               >
-                <IoCallOutline className="inline me-2" /> 9994715106
+                <IoCallOutline className="inline me-2" />+91 99947 15106
               </Link>
             </div>
 
