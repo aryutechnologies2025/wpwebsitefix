@@ -118,7 +118,7 @@ const AboutMeetOurTeam = () => {
         {[
           { img: teamImage1, name: "Aruna Yuvaraj", role: "Managing Director" },
           { img: teamImage2, name: "Yuvaraj T", role: "Founder" },
-          { img: teamImage3, name: "Kanimozhi", role: "Senior Developer" },
+          // { img: teamImage3, name: "Kanimozhi", role: "Senior Developer" },
         ].map((member, i) => (
           <div
             key={i}
