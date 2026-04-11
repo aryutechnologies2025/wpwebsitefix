@@ -1,5 +1,7 @@
-import { Geist, Geist_Mono, Poppins, Albert_Sans } from "next/font/google";
+// @ts-ignore
 import "./globals.css";
+
+import { Geist, Geist_Mono, Poppins, Albert_Sans } from "next/font/google";
 import { Footer } from "./components/layout";
 import localFont from "next/font/local";
 import SmoothScrollProvider from "./components/animations/SmoothScroll";
