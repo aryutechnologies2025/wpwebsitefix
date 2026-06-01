@@ -61,10 +61,10 @@ jobs:
           # Use ONE of the following:
 
           # If using SSH private key:
-          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          #  key: ${{ secrets.HOSTINGER_SSH_KEY }}
 
           # OR if using password authentication:
-          # password: ${{ secrets.HOSTINGER_PASSWORD }}
+          password: ${{ secrets.HOSTINGER_PASSWORD }}
 
           port: 65002
 
