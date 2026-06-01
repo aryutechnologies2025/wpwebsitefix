@@ -1,74 +1,81 @@
 name: Deploy - WPWebsiteFix
 
 on:
-workflow_dispatch:
-push:
-branches:
-- main
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
-deploy:
-runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-steps:
-  - name: Checkout Repository
-    uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-  - name: Setup Node
-    uses: actions/setup-node@v4
-    with:
-      node-version: 20
+      - name: Install Dependencies
+        working-directory: mainsource
+        run: npm install
 
-  - name: Install Dependencies
-    working-directory: mainsource
-    run: npm install
+      - name: Build Next.js
+        working-directory: mainsource
+        run: npm run build
 
-  - name: Build Next.js
-    working-directory: mainsource
-    run: npm run build
+      - name: Verify Build Output
+        run: |
+          if [ ! -f "mainsource/out/index.html" ]; then
+            echo "Build failed: mainsource/out/index.html not found"
+            exit 1
+          fi
 
-  - name: Verify Build Output
-    run: |
-      if [ ! -f "mainsource/out/index.html" ]; then
-        echo "Build failed: mainsource/out/index.html not found"
-        exit 1
-      fi
+      - name: Replace Repository Out Folder
+        run: |
+          rm -rf out
+          cp -r mainsource/out ./out
 
-  - name: Replace Repository Out Folder
-    run: |
-      rm -rf out
-      cp -r mainsource/out ./out
+      - name: Commit Generated Out Folder
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
 
-  - name: Commit Generated Out Folder
-    run: |
-      git config user.name "github-actions"
-      git config user.email "github-actions@github.com"
+          git add out
 
-      git add out
+          git commit -m "Deploy: update out folder" || echo "No changes"
 
-      git commit -m "Deploy: update out folder" || echo "No changes"
+          git push origin main
 
-      git push origin main
+      - name: Deploy To Server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.HOSTINGER_HOST }}
+          username: ${{ secrets.HOSTINGER_USERNAME }}
 
-  - name: Deploy To Server
-    uses: appleboy/ssh-action@v1
-    with:
-      host: ${{ secrets.HOSTINGER_HOST }}
-      username: ${{ secrets.HOSTINGER_USERNAME }}
-      key: ${{ secrets.HOSTINGER_PASSWORD }}
-      port: 65002
-      script: |
-        cd /home/u925800196/domains/wpwebsitefix.com/public_html
+          # Use ONE of the following:
 
-        git fetch origin main
-        git reset --hard origin/main
+          # If using SSH private key:
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
 
-        find . -mindepth 1 -maxdepth 1 \
-          ! -name ".git" \
-          ! -name "mainsource" \
-          ! -name "out" \
-          -exec rm -rf {} +
+          # OR if using password authentication:
+          # password: ${{ secrets.HOSTINGER_PASSWORD }}
 
-        cp -a out/. .
+          port: 65002
 
+          script: |
+            cd /home/u925800196/domains/wpwebsitefix.com/public_html
+
+            git fetch origin main
+            git reset --hard origin/main
+
+            find . -mindepth 1 -maxdepth 1 \
+              ! -name ".git" \
+              ! -name "mainsource" \
+              ! -name "out" \
+              -exec rm -rf {} +
+
+            cp -a out/. .
