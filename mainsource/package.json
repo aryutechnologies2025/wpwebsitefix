@@ -7,7 +7,7 @@
     "build": "next build && npm run postbuild",
     "start": "next start -p 5001",
     "lint": "eslint",
-    "postbuild": "next-sitemap && copy .htaccess out\\.htaccess"
+    "postbuild": "next-sitemap && cp .htaccess out\\.htaccess"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
