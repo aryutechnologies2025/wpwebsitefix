@@ -74,7 +74,7 @@ const Home_Hero = () => {
             <IoIosStar />
           </div>
 
-          <p>3000 + Customers</p>
+          <p>3 + Customers</p>
         </div>
 
         {/* Contact Button */}
