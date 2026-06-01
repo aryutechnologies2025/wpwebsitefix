@@ -1,24 +1,74 @@
-name: 🚀 WPwebsitefix Upload Files to Hostinger via FTP
+name: Deploy - WPWebsiteFix
 
 on:
-  push:
-    branches:
-      - main
+workflow_dispatch:
+push:
+branches:
+- main
 
 jobs:
-  ftp-deploy:
-    runs-on: ubuntu-latest
+deploy:
+runs-on: ubuntu-latest
 
-    steps:
-      - name: 📥 Checkout Code
-        uses: actions/checkout@v4
 
-      - name: 📤 Upload Files via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
-          server-dir: ${{ secrets.REMOTE_DIR }}
-          protocol: ftp
+steps:
+  - name: Checkout Repository
+    uses: actions/checkout@v4
+
+  - name: Setup Node
+    uses: actions/setup-node@v4
+    with:
+      node-version: 20
+
+  - name: Install Dependencies
+    working-directory: mainsource
+    run: npm install
+
+  - name: Build Next.js
+    working-directory: mainsource
+    run: npm run build
+
+  - name: Verify Build Output
+    run: |
+      if [ ! -f "mainsource/out/index.html" ]; then
+        echo "Build failed: mainsource/out/index.html not found"
+        exit 1
+      fi
+
+  - name: Replace Repository Out Folder
+    run: |
+      rm -rf out
+      cp -r mainsource/out ./out
+
+  - name: Commit Generated Out Folder
+    run: |
+      git config user.name "github-actions"
+      git config user.email "github-actions@github.com"
+
+      git add out
+
+      git commit -m "Deploy: update out folder" || echo "No changes"
+
+      git push origin main
+
+  - name: Deploy To Server
+    uses: appleboy/ssh-action@v1
+    with:
+      host: ${{ secrets.HOSTINGER_HOST }}
+      username: ${{ secrets.HOSTINGER_USERNAME }}
+      key: ${{ secrets.HOSTINGER_PASSWORD }}
+      port: 65002
+      script: |
+        cd /home/u925800196/domains/wpwebsitefix.com/public_html
+
+        git fetch origin main
+        git reset --hard origin/main
+
+        find . -mindepth 1 -maxdepth 1 \
+          ! -name ".git" \
+          ! -name "mainsource" \
+          ! -name "out" \
+          -exec rm -rf {} +
+
+        cp -a out/. .
+
