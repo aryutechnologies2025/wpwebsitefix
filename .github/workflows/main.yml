@@ -5,8 +5,9 @@ on:
   push:
     branches:
       - main
+
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   deploy:
@@ -36,19 +37,10 @@ jobs:
             exit 1
           fi
 
-      - name: Replace Repository Out Folder
+      - name: Replace Out Folder
         run: |
           rm -rf out
           cp -r mainsource/out ./out
-
-      - name: Commit Generated Out Folder
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-
-          git add out
-          git commit -m "Deploy: update out folder" || echo "No changes"
-          git push origin main
 
       - name: Deploy To Server
         uses: appleboy/ssh-action@v1.2.0
@@ -59,9 +51,6 @@ jobs:
           port: 65002
           script: |
             cd /home/u744877281/domains/wpwebsitefix.com/public_html
-
-            git fetch origin main
-            git reset --hard origin/main
 
             find . -mindepth 1 -maxdepth 1 \
               ! -name ".git" \
