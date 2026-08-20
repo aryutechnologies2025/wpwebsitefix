@@ -47,9 +47,7 @@ jobs:
           git config user.email "github-actions@github.com"
 
           git add out
-
           git commit -m "Deploy: update out folder" || echo "No changes"
-
           git push origin main
 
       - name: Deploy To Server
@@ -57,19 +55,10 @@ jobs:
         with:
           host: ${{ secrets.HOSTINGER_HOST }}
           username: ${{ secrets.HOSTINGER_USERNAME }}
-
-          # Use ONE of the following:
-
-          # If using SSH private key:
-          #  key: ${{ secrets.HOSTINGER_SSH_KEY }}
-
-          # OR if using password authentication:
-          password: ${{ secrets.HOSTINGER_PASSWORD }}
-
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
           port: 65002
-
           script: |
-            cd /home/u925800196/domains/wpwebsitefix.com/public_html
+            cd /home/u744877281/domains/wpwebsitefix.com/public_html
 
             git fetch origin main
             git reset --hard origin/main
