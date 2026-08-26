@@ -37,12 +37,18 @@ jobs:
             exit 1
           fi
 
-      - name: Replace Out Folder
-        run: |
-          rm -rf out
-          cp -r mainsource/out ./out
+      - name: Copy Build Artifacts to Server (SCP)
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOSTINGER_HOST }}
+          username: ${{ secrets.HOSTINGER_USERNAME }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: 65002
+          source: "mainsource/out/*"
+          target: "/home/u744877281/domains/wpwebsitefix.com/public_html"
+          strip_components: 2
 
-      - name: Deploy To Server
+      - name: Cleanup Target Directory via SSH
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.HOSTINGER_HOST }}
@@ -51,11 +57,5 @@ jobs:
           port: 65002
           script: |
             cd /home/u744877281/domains/wpwebsitefix.com/public_html
-
-            find . -mindepth 1 -maxdepth 1 \
-              ! -name ".git" \
-              ! -name "mainsource" \
-              ! -name "out" \
-              -exec rm -rf {} +
-
-            cp -a out/. .
+            # Optional: Remove backup zip file if no longer needed
+            rm -f public_html.zip
