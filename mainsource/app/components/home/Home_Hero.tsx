@@ -57,7 +57,7 @@ const Home_Hero = () => {
         {/* Top Label */}
         <div className="flex items-center gap-2 text-sm sm:text-base mb-4 sm:mb-6">
           <CiGlobe className="text-xl sm:text-2xl" />
-          <MaskedTextReveal text="| WordPress Website Maintenance Service" />
+          <MaskedTextReveal text="| WordPress Website Maintenance Services" />
         </div>
 
         {/* Headline */}
