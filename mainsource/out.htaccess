@@ -1,0 +1,16 @@
+# Disable directory listing (VERY IMPORTANT)
+Options -Indexes
+
+# Serve index.html automatically
+DirectoryIndex index.html
+
+# Enable rewrite engine
+RewriteEngine On
+
+# If file or folder exists, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+ErrorDocument 404 /404.html
+

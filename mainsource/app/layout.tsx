@@ -110,23 +110,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-     
-     <head>
-      {/* --- Google Tag Manager --- */}
+      <head>
+        {/* Google Analytics (GA4) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-9K56KJN42L"
+          strategy="afterInteractive"
+        />
+        
+        {/* Google Ads */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-16666717997"
           strategy="afterInteractive"
         />
-        <Script id="google-ads-init" strategy="afterInteractive">
+        
+        {/* Combined initialization for both GA4 and Google Ads */}
+        <Script id="google-analytics-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            gtag('config', 'G-9K56KJN42L');
             gtag('config', 'AW-16666717997');
           `}
         </Script>
-     </head>
-
+      </head>
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${albertSans.variable} ${visby.variable} antialiased font-poppins`}
